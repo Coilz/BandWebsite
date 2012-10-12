@@ -28,9 +28,6 @@ namespace Ewk.BandWebsite.Catalogs.MongoDb
             var connectionString = string.Format(CultureInfo.InvariantCulture, "{0}?safe=true", dbUrl);
 
              _database = MongoDatabase.Create(connectionString);
-             if (_database.CollectionExists("PhotoAdapterSettings"))
-                 _database.RenameCollection("PhotoAdapterSettings", "AdapterSettings", true);
-
         }
 
         #region Implementation of ICatalog
