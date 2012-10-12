@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Ewk.BandWebsite.Catalogs;
@@ -24,7 +25,8 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                     container =>
                     {
                         var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioProcess>(container);
-                        var entities = process.GetAudioTracks();
+                        var entities = process.GetAudioTracks()
+                            .ToList();
 
                         var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioAdapterSettingsMapper>(container);
                         var model = mapper.Map(entities);

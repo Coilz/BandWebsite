@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Ewk.BandWebsite.Catalogs;
@@ -130,7 +131,8 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                     container =>
                     {
                         var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPhotoProcess>(container);
-                        var entities = process.GetPhotos();
+                        var entities = process.GetPhotos()
+                            .ToList();
 
                         var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPhotoAdapterSettingsMapper>(container);
                         var model = mapper.Map(entities);
