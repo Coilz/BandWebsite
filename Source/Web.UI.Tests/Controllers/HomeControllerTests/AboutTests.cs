@@ -1,4 +1,5 @@
-﻿using Ewk.BandWebsite.UnitTests.ModelCreators;
+﻿using System.Web.Mvc;
+using Ewk.BandWebsite.UnitTests.ModelCreators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 
@@ -28,7 +29,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.HomeControllerTests
                 .Repeat.Once();
             BandMapper.Replay();
 
-            var result = Controller.About();
+            var result = Controller.About().Result as ViewResult;
 
             Assert.IsNotNull(result);
             
