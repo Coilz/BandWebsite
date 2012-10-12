@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Ewk.BandWebsite.Adapters;
+using Ewk.BandWebsite.Domain.BandModel;
 using Ewk.BandWebsite.UnitTests.ModelCreators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
@@ -122,13 +123,22 @@ namespace Ewk.BandWebsite.Process.UnitTests.PhotoProcessTests
             PhotoAdapter.VerifyAllExpectations();
         }
 
-        [TestMethod, ExpectedException(typeof(InvalidOperationException))]
+        [TestMethod, ExpectedException(typeof(AuthorizationException))]
         public void When_GetPhotos_is_called_and_no_PhotoAdapterSettings_have_been_stored_then_an_InvalidOperationException_is_thrown_and_GetPhotos_on_the_PhotoAdapter_is_never_called()
         {
+            var adapterSettings = AdapterSettingsCreator.CreateSingle();
+            adapterSettings.OAuthAccessToken = null;
+            adapterSettings.OAuthRequestToken = null;
+
             BandRepository
                 .Expect(repository =>
                         repository.GetAdapterSettings(Arg<string>.Is.Anything))
                 .Throw(new InvalidOperationException())
+                .Repeat.Once();
+            BandRepository
+                .Expect(repository =>
+                        repository.AddAdapterSettings(Arg<AdapterSettings>.Is.Anything))
+                .Return(adapterSettings)
                 .Repeat.Once();
             BandRepository.Replay();
 

@@ -49,7 +49,7 @@ namespace Ewk.BandWebsite.Process
         public IEnumerable<AudioTrack> GetAudioTracks()
         {
             var adapterSettings = GetAdapterSettings();
-            if (adapterSettings == null || adapterSettings.OAuthAccessToken == null)
+            if (adapterSettings.OAuthAccessToken == null)
             {
                 throw new AuthorizationException();
             }
