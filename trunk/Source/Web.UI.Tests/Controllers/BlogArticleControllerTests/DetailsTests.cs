@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Web.Mvc;
 using Ewk.BandWebsite.UnitTests.ModelCreators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
@@ -38,8 +38,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.BlogArticleControllerTests
                 .Repeat.Once();
             BlogArticleMapper.Replay();
 
-            var result = Controller.Details(entity.Id);
-
+            var result = Controller.Details(entity.Id).Result as ViewResult; ;
             Assert.IsNotNull(result);
             
             BlogProcess.VerifyAllExpectations();
