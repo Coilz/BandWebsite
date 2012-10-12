@@ -1,0 +1,29 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Blog.BlogArticleDetailsModel
+           
+<div class="item">
+    <div class="title">
+        @Html.ActionLink(Model.Title, "Details", "BlogArticle", new { id = Model.Id }, null)
+        @if(Request.IsAuthenticated)
+        {
+            <span class="editLink">
+                @Html.ActionLink("edit", "Edit", "BlogArticle", new { id = Model.Id }, null)
+            </span>
+        }
+    </div>
+    <div class="content">
+        @MvcHtmlString.Create(Model.Content)
+    </div>
+    <div class="footer">
+        <span class="detialLink">
+            @Html.ActionLink("more >>", "Details", "BlogArticle", new { id = Model.Id }, null)
+        </span>
+        <span>
+            <span>
+                @Model.AuthorName, 
+            </span>
+            <span class="noWrap">
+                @Model.ModificationDate.ToString("dd MMMM yyyy")
+            </span>
+        </span>
+    </div>
+</div>

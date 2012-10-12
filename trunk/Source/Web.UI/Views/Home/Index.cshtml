@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div id="home">
+    
+    <div class="leftColumn">
+        @{Html.RenderAction("Music", "Home", new { count = 3 });}
+        @{Html.RenderAction("Video", "Home", new { count = 3 });}
+    </div>
+
+    <div class="centerColumn">
+        @{Html.RenderAction("Performance", "Home", new { count = 5 });}
+        @{Html.RenderAction("Shop", "Home", new { count = 4 });}
+    </div>
+
+    <div class="rightColumn">
+        @{Html.RenderAction("Blog", "Home", new { count = 4 });}
+    </div>
+
+</div>

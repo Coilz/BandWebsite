@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Upload photo";
+}
+
+<div class="detail">
+    <form action="" method="post" enctype="multipart/form-data">
+        @Html.ValidationSummary(true, "Editting photo adapter settings was unsuccessful. Please correct the errors and try again.")
+        <div>
+            <fieldset>
+                <legend>Upload a photo</legend>
+                <p>
+                    <input type="file" name="Upload" />
+                </p>
+                <p>
+                    <input type="submit" value="Done" />
+                </p>
+            </fieldset>
+        </div>
+    </form>
+</div>

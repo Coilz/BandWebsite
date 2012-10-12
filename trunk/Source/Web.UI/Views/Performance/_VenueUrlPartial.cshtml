@@ -1,0 +1,5 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Performance.PerformanceDetailsModel
+
+@(Model.VenueUrl == string.Empty
+        ? @Html.DisplayFor(performance => performance.VenueName) 
+        : @Html.Raw(string.Format(@"<a href=""{0}"" target='_blank'>{1}</a>", @Model.VenueUrl, @Model.VenueName)))

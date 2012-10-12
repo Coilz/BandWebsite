@@ -1,0 +1,44 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Performance.PerformanceDetailsModel
+           
+<div class="item">
+    
+    <div class="title">
+        <div class="noWrap">
+            @Html.DisplayFor(performance => performance.Date)
+        </div>
+        @if(Request.IsAuthenticated)
+        {
+            <span class="editLink">
+                @Html.ActionLink("edit", "Edit", "Performance", new { id = Model.Id }, null)
+            </span>
+        }
+    </div>
+
+    <div class="content">
+        <div>
+            <div class="noWrap venue column">
+                @Html.Partial("~/Views/Performance/_VenueUrlPartial.cshtml")
+            </div>
+            <div class="noWrap city column">
+                @Html.Partial("~/Views/Performance/_CityPartial.cshtml")
+            </div>
+        </div>
+        <div>
+            <div class="noWrap time column">
+                @Html.DisplayFor(performance => performance.StartTime) - @Html.DisplayFor(performance => performance.EndTime)
+            </div>
+            <div class="noWrap price column">
+                @Html.DisplayFor(performance => performance.Price)
+            </div>
+        </div>
+        <div class="info column" @(string.IsNullOrEmpty(Model.Info) ? "style=display:none" : "")>
+            <div class="display-label">
+                @Html.LabelFor(m => m.Info)
+            </div>
+            <div class="display-field">
+                @MvcHtmlString.Create(Model.Info)
+            </div>
+        </div>
+
+    </div>
+</div>

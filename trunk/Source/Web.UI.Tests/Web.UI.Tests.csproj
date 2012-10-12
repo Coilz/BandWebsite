@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7730F12A-4505-4CF2-9298-107B62CF9922}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ewk.BandWebsite.Web.UI.Tests</RootNamespace>
+    <AssemblyName>Ewk.BandWebsite.Web.UI.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ewk.Configuration, Version=1.1.4664.23364, Culture=neutral, PublicKeyToken=0ffe897e6e5722cd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ewk.Configuration.1.1.4664.23364\lib\net40\Ewk.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Ewk.UnitTests, Version=1.1.4664.23365, Culture=neutral, PublicKeyToken=0ffe897e6e5722cd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ewk.UnitTests.1.1.4664.23365\lib\net40\Ewk.UnitTests.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BlogArticleControllerTests\BlogArticleControllerTestBase.cs" />
+    <Compile Include="Controllers\BlogArticleControllerTests\DeleteTests.cs" />
+    <Compile Include="Controllers\BlogArticleControllerTests\EditTests.cs" />
+    <Compile Include="Controllers\BlogArticleControllerTests\IndexTests.cs" />
+    <Compile Include="Controllers\BlogArticleControllerTests\DetailsTests.cs" />
+    <Compile Include="Controllers\ControllerTestBase.cs" />
+    <Compile Include="Controllers\AudioAdapterSettingsControllerTests\EditTests.cs" />
+    <Compile Include="Controllers\AudioAdapterSettingsControllerTests\IndexTests.cs" />
+    <Compile Include="Controllers\AudioAdapterSettingsControllerTests\AudioAdapterSettingsControllerTestBase.cs" />
+    <Compile Include="Controllers\HomeControllerTests\AboutTests.cs" />
+    <Compile Include="Controllers\PerformanceControllerTests\DeleteTests.cs" />
+    <Compile Include="Controllers\PerformanceControllerTests\EditTests.cs" />
+    <Compile Include="Controllers\PerformanceControllerTests\PerformanceControllerTestBase.cs" />
+    <Compile Include="Controllers\PerformanceControllerTests\DetailsTests.cs" />
+    <Compile Include="Controllers\PerformanceControllerTests\IndexTests.cs" />
+    <Compile Include="Controllers\HomeControllerTests\BlogTests.cs" />
+    <Compile Include="Controllers\HomeControllerTests\HomeControllerTestBase.cs" />
+    <Compile Include="Controllers\PhotoAdapterSettingsControllerTests\EditTests.cs" />
+    <Compile Include="Controllers\PhotoAdapterSettingsControllerTests\IndexTests.cs" />
+    <Compile Include="Controllers\PhotoAdapterSettingsControllerTests\PhotoAdapterSettingsControllerTestBase.cs" />
+    <Compile Include="ModelMappers\BlogArticleMapperTests\BlogArticleMapperTestBase.cs" />
+    <Compile Include="ModelMappers\BlogArticleMapperTests\MapToUpdateBlogArticleModelTests.cs" />
+    <Compile Include="ModelMappers\BlogArticleMapperTests\MapToBlogArticleDetailsModelTests.cs" />
+    <Compile Include="ModelMappers\BlogArticleMapperTests\MapUpdateBlogArticleTests.cs" />
+    <Compile Include="ModelMappers\BlogArticleMapperTests\MapAddBlogArticleTests.cs" />
+    <Compile Include="ModelMappers\BandMapperTests\MapToAboutModelTests.cs" />
+    <Compile Include="ModelMappers\BandMapperTests\MapToAboutUpdateModelTests.cs" />
+    <Compile Include="ModelMappers\BandMapperTests\MapUpdateAboutModelTests.cs" />
+    <Compile Include="ModelMappers\BandMapperTests\BandMapperTestBase.cs" />
+    <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\MapToAudioAdapterSettingsDetailsModelTests.cs" />
+    <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\MapToUpdateAudioAdapterSettingsModelTests.cs" />
+    <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\MapUpdateAudioAdapterSettingsTests.cs" />
+    <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\AudioAdapterSettingsMapperTestBase.cs" />
+    <Compile Include="ModelMappers\PerformanceMapperTests\PerformanceMapperTestBase.cs" />
+    <Compile Include="ModelMappers\PerformanceMapperTests\MapAddPerformanceTests.cs" />
+    <Compile Include="ModelMappers\PerformanceMapperTests\MapToPerformanceDetailsModelTests.cs" />
+    <Compile Include="ModelMappers\PerformanceMapperTests\MapToUpdatePerformanceModelTests.cs" />
+    <Compile Include="ModelMappers\PerformanceMapperTests\MapUpdatePerformanceTests.cs" />
+    <Compile Include="ModelMappers\ModelMappersTestBase.cs" />
+    <Compile Include="ModelMappers\PhotoAdapterSettingsMapperTests\MapToPhotoAdapterSettingsDetailsModelTests.cs" />
+    <Compile Include="ModelMappers\PhotoAdapterSettingsMapperTests\MapToUpdatePhotoAdapterSettingsModelTests.cs" />
+    <Compile Include="ModelMappers\PhotoAdapterSettingsMapperTests\MapUpdatePhotoAdapterSettingsTests.cs" />
+    <Compile Include="ModelMappers\PhotoAdapterSettingsMapperTests\PhotoAdapterSettingsMapperTestBase.cs" />
+    <Compile Include="ModelMappers\UserMapperTests\MapToMembershipUserTests.cs" />
+    <Compile Include="ModelMappers\UserMapperTests\MapMembershipUserTests.cs" />
+    <Compile Include="ModelMappers\UserMapperTests\UserMapperTestBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CustomMembershipProviderTests\CreateUserTests.cs" />
+    <Compile Include="Security\CustomMembershipProviderTests\CustomMembershipProviderTestBase.cs" />
+    <Compile Include="Security\CustomMembershipProviderTests\ValidateUserTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalogs\Catalogs.csproj">
+      <Project>{E96D0F82-3CD5-4F26-B99F-D83E1003DA14}</Project>
+      <Name>Catalogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4265D5D7-0D98-44DB-84E3-86D9C6BB9DFD}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{E729B7F6-DB5D-44B4-9B71-B1DABDD9F147}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Process\Process.csproj">
+      <Project>{DB909BB3-AC2E-481D-9900-36528A54DFB8}</Project>
+      <Name>Process</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTests\UnitTests.csproj">
+      <Project>{4A60AE3E-C493-42FB-8F00-6D4F1EEBAB6F}</Project>
+      <Name>UnitTests %28UnitTests\UnitTests%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.UI\Web.UI.csproj">
+      <Project>{1EB16D67-1CD6-48B4-B3D8-F20BE707DA7C}</Project>
+      <Name>Web.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

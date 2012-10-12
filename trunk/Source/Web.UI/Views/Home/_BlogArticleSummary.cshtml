@@ -1,0 +1,26 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.ItemListModel<Ewk.BandWebsite.Web.UI.Models.Blog.BlogArticleDetailsModel>
+
+<div class="blog summary">
+    
+    <div class="title">
+        @Html.ActionLink(Model.Title, "Index", "BlogArticle")
+        @if(Request.IsAuthenticated)
+        {
+            <span class="editLink">
+                @Html.ActionLink("new", "Create", "BlogArticle")
+            </span>
+        }
+    </div>
+
+    <div class="items">
+        @foreach (var item in Model.Items)
+        {
+            @Html.Partial("~/Views/BlogArticle/_Item.cshtml", item)
+        }
+    </div>
+
+    <div class="footer">
+        @Html.ActionLink("View more items", "Index", "BlogArticle")
+    </div>
+
+</div>

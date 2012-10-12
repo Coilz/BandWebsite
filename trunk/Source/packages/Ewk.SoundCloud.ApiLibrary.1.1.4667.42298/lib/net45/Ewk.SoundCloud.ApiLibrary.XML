@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ewk.SoundCloud.ApiLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:Ewk.SoundCloud.ApiLibrary.Entities.Entity">
+            <summary>
+            Base class for entities.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.id">
+            <summary>
+            The unique identifier.
+            </summary>
+            <example>123</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.uri">
+            <summary>
+            API resource URL
+            </summary>
+            <example>"http://api.soundcloud.com/comments/32562"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.created_at">
+            <summary>
+            Timestamp of creation
+            </summary>
+            <example>"2009/08/13 18:30:10 +0000"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.body">
+            <summary>
+            HTML comment body
+            </summary>
+            <example>"i love this beat!"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.timestamp">
+            <summary>
+            Associated timestamp in milliseconds
+            </summary>
+            <example>55593</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.user_id">
+            <summary>
+            User id of the owner
+            </summary>
+            <example>343</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.user">
+            <summary>
+            Mini user representation of the owner
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Comment.track_id">
+            <summary>
+            The track id of the related track
+            </summary>
+            <example>54</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.OAuth2TokenRequest.client_id">
+            <summary>
+            The client id belonging to your application.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.OAuth2TokenRequest.client_secret">
+            <summary>
+            The client secret belonging to your application
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.OAuth2TokenRequest.redirect_uri">
+            <summary>
+            The redirect uri you have configured for your application
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.OAuth2TokenRequest.grant_type">
+            <summary>
+            (authorization_code, refresh_token, password, client_credentials, oauth1_token)
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.OAuth2TokenRequest.code">
+            <summary>
+            The authorization code obtained when user is sent to redirect_uri
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Users.IUserResources`1.Tracks">
+            <summary>
+            Represents the endpoint for SoundCloud tracks.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Users.IUserResources`1.Groups">
+            <summary>
+            Represents the endpoint for SoundCloud groups.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Users.IUserResources`1.Comments">
+            <summary>
+            Represents the endpoint for SoundCloud comments.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Users.IUserResources`1.Playlists">
+            <summary>
+            Represents the endpoint for SoundCloud playlists.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Users.IUserResources`1.Followers">
+            <summary>
+            Represents the endpoint for SoundCloud followers.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Users.IUserResources`1.Followings">
+            <summary>
+            Represents the endpoint for SoundCloud followings.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Users.IUserResources`1.Favorites">
+            <summary>
+            Represents the endpoint for SoundCloud favorites.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Groups.IGroupResources.Moderators">
+            <summary>
+            Represents the endpoint for SoundCloud moderators.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Groups.IGroupResources.Members">
+            <summary>
+            Represents the endpoint for SoundCloud members.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Groups.IGroupResources.Contributors">
+            <summary>
+            Represents the endpoint for SoundCloud contributors.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Groups.IGroupResources.Users">
+            <summary>
+            Represents the endpoint for SoundCloud users.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Groups.IGroupResources.Tracks">
+            <summary>
+            Represents the endpoint for SoundCloud tracks.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Groups.IGroupResources.PendingTracks">
+            <summary>
+            Represents the endpoint for SoundCloud pending tracks.
+            </summary>
+        </member>
+        <member name="T:Ewk.SoundCloud.ApiLibrary.Entities.Track">
+            <summary>
+            Represents a track on soundcloud.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Tracks.ITrackResources.Comments">
+            <summary>
+            Represents the endpoint for SoundCloud comments on tracks.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Resources.Tracks.ITrackResources.Favoriters">
+            <summary>
+            Represents the endpoint for SoundCloud favoriters on tracks.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.id">
+            <summary>
+            The unique identifier.
+            </summary>
+            <example>123</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.created_at">
+            <summary>
+            Timestamp of creation
+            </summary>
+            <example>"2009/08/13 18:30:10 +0000"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.user_id">
+            <summary>
+            User-id of the owner
+            </summary>
+            <example>343</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.user">
+            <summary>
+            Mini user representation of the owner
+            </summary>
+            <example>{id: 343, username: "Doctor Wilson"...}</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.title">
+            <summary>
+            Track title
+            </summary>
+            <example>"S-Bahn Sounds"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.permalink">
+            <summary>
+            Permalink of the resource
+            </summary>
+            <example>"sbahn-sounds"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.permalink_url">
+            <summary>
+            URL to the SoundCloud.com page
+            </summary>
+            <example>"http://soundcloud.com/bryan/sbahn-sounds"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.uri">
+            <summary>
+            API resource URL
+            </summary>
+            <example>"http://api.soundcloud.com/tracks/123"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.sharing">
+            <summary>
+            Public/private sharing
+            </summary>
+            <example>"public"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.embeddable_by">
+            <summary>
+            Who can embed this track or playlist
+            </summary>
+            <example>"all", "me", or "none"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.purchase_url">
+            <summary>
+            External purchase link
+            </summary>
+            <example>"http://amazon.com/buy/a43aj0b03"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.artwork_url">
+            <summary>
+            URL to a JPEG image
+            </summary>
+            <example>"http://i1.sndcdn.com/a....-large.jpg?142a848"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.description">
+            <summary>
+            HTML description
+            </summary>
+            <example>"my first track"</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.bpm">
+            <summary>
+            beats per minute
+            </summary>
+            <example>120</example>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.Entities.Track.commentable">
+            <summary>
+            track commentable (boolean)
+            </summary>
+            <example>true</example>
+        </member>
+        <member name="T:Ewk.SoundCloud.ApiLibrary.ISoundCloudClient">
+            <summary>
+            Provides access to the soundcloud api.
+            </summary>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.ISoundCloudClient.RequestOAuthToken(System.String,System.String)">
+            <summary>
+            Requests an OAuth token from the soundcloud api that can be used by the application with the <see cref="P:Ewk.SoundCloud.ApiLibrary.ISoundCloudClient.OAuthToken"/>.
+            </summary>
+            <param name="code">The code that was returned by soundcloud after the user authorized the application.</param>
+            <param name="clientSecret">The api secret of the application.</param>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.ISoundCloudClient.ClientId">
+            <summary>
+            The api key of the application.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.ISoundCloudClient.OAuthToken">
+            <summary>
+            The OAuth token that is used for accessing resources that need authorization.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.ISoundCloudClient.RedirectUri">
+            <summary>
+            The Uri that is redirected to after the user has authorized the app.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.ISoundCloudClient.PageSize">
+            <summary>
+            The number of items that are returned when multiple instances on a resource are requested.
+            </summary>
+        </member>
+        <member name="T:Ewk.SoundCloud.ApiLibrary.SoundCloud">
+            <summary>
+            Provides a fluent interface to the soundcloud api.
+            </summary>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.SoundCloud.#ctor(System.String)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+            <param name="clientId">The api key of your soundcloud app.</param>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.SoundCloud.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+            <param name="clientId">The api key of your soundcloud app.</param>
+            <param name="accessToken">The token that can be used to access protected resources.</param>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.SoundCloud.#ctor(Ewk.SoundCloud.ApiLibrary.ISoundCloudClient)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+            <param name="soundCloudClient">A mocked soundcloud client.</param>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.SoundCloud.#ctor(Ewk.SoundCloud.ApiLibrary.ISoundCloudClient,System.String)">
+            <summary>
+            Initializes a new instance.
+            </summary>
+            <param name="soundCloudClient">A mocked soundcloud client.</param>
+            <param name="accessToken">The token that can be used to access protected resources.</param>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.SoundCloud.SetPageSize(System.Int32)">
+            <summary>
+            Sets the number of entities that are returned when using paging.
+            </summary>
+            <param name="size">The page size for paging.</param>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.SoundCloud.GetAuthorizeUri(System.Uri)">
+            <summary>
+            Gets the <see cref="T:System.Uri"/> of the OAuth2 authorization endpoint.
+            Your app redirects a user to this endpoint, allowing them to delegate access to their account.
+            </summary>
+            <param name="redirectUri">The redirect uri you have configured for your application.</param>
+            <returns>The <see cref="T:System.Uri"/> of the OAuth2 authorization endpoint.</returns>
+        </member>
+        <member name="M:Ewk.SoundCloud.ApiLibrary.SoundCloud.RequestOAuthToken(System.Uri,System.String)">
+            <summary>
+            Requests an <see cref="T:Ewk.SoundCloud.ApiLibrary.Entities.OAuth2Token"/> using the <see cref="T:System.Uri"/> that was requested after the Authorization by the user.
+            </summary>
+            <param name="responseUri">The complete <see cref="T:System.Uri"/> of the request after Authorization.</param>
+            <param name="clientSecret">The api secret of the app.</param>
+            <returns>An <see cref="T:Ewk.SoundCloud.ApiLibrary.Entities.OAuth2Token"/> that can be used to access protected resources.</returns>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.SoundCloud.Me">
+            <summary>
+            Represents the endpoint for the authenticated SoundCloud user.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.SoundCloud.Users">
+            <summary>
+            Represents the endpoint for SoundCloud users.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.SoundCloud.Tracks">
+            <summary>
+            Represents the endpoint for SoundCloud tracks.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.SoundCloud.Playlists">
+            <summary>
+            Represents the endpoint for SoundCloud playlists.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.SoundCloud.Comments">
+            <summary>
+            Represents the endpoint for SoundCloud comments.
+            </summary>
+        </member>
+        <member name="P:Ewk.SoundCloud.ApiLibrary.SoundCloud.Groups">
+            <summary>
+            Represents the endpoint for SoundCloud groups.
+            </summary>
+        </member>
+    </members>
+</doc>

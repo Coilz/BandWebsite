@@ -1,0 +1,44 @@
+﻿.performance .column,
+#performance .column {
+    display: inline-block;
+    margin: 0 0.5em 0.5em 0;
+}
+.performance .date.column,
+#performance .date.column {
+    font-weight: bold;
+    min-width: 9em;
+    width: 20%;
+}
+.performance .venue.column,
+#performance .venue.column {
+    min-width: 12em;
+    width: 30%;
+}
+.performance .city.column,
+#performance .city.column {
+    min-width: 12em;
+    width: 30%;
+}
+.performance .time.column,
+#performance .time.column {
+    min-width: 6em;
+    width: 5%;
+    text-align: right;
+}
+.performance .price.column,
+#performance .price.column {
+    min-width: 3.5em;
+    width: 5%;
+    text-align: right;
+    float: right;
+}
+.performance .info.column,
+#performance .info.column {
+    display: block;
+    font-size: .8em;
+    margin: 0;
+}
+
+.performance .info.column {
+    display: none;
+}

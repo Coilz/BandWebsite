@@ -1,0 +1,22 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.ItemListModel<Ewk.BandWebsite.Web.UI.Models.AudioAdapterSettings.AudioDetailsModel>
+
+<div class="music summary">
+    <div class="title">
+        @Html.ActionLink(Model.Title, "Index", "Audio")
+        @if(Request.IsAuthenticated)
+        {
+            <span class="editLink">
+                @Html.ActionLink("audio settings", "Index", "AudioAdapterSettings")
+            </span>
+        }
+    </div>
+    <div class="items">
+        @foreach (var item in Model.Items)
+        {
+            @Html.Partial("~/Views/Audio/_Item.cshtml", item)
+        }
+    </div>
+    <div class="footer">
+        @Html.ActionLink("View more items", "Index", "Audio")
+    </div>
+</div>

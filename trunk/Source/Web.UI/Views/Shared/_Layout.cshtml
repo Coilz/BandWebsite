@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="MobileOptimized" content="width">
+
+        <link rel="apple-touch-icon" href="@Href("~/favicon.ico")" />
+        <link rel="apple-touch-icon-precomposed" href="@Href("~/favicon.ico")" />
+
+        <title>Wood - @ViewBag.Title</title>
+        <link href="@Href("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />
+    
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bandwebsite/site.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bandwebsite/home.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bandwebsite/entityview.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bandwebsite/blog.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bandwebsite/music.css")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bandwebsite/performance.css")" />
+
+        <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+        
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")"></script>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/jquery.fancybox.css?v=2.0.6")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/jquery.fancybox-buttons.css?v=1.0.2")" />
+        <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/jquery.fancybox-thumbs.css?v=2.0.6")" />
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/themes/base/jquery-ui.css")" />
+
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.easing.1.3.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.mousewheel-3.0.6.pack.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox.pack.js?v=2.0.6")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox-buttons.js?v=1.0.2")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox-media.js?v=1.0.0")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.fancybox-thumbs.js?v=2.0.6")"></script>
+
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.carouFredSel-5.6.2.js")"></script>
+
+@*        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.mobile-1.1.0.min.js")"></script>*@
+@*        <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-2.5.3.js")"></script>*@
+
+        <script type="text/javascript" src="@Url.Content("~/Scripts/bandwebsite/bandwebsite.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/bandwebsite/header/header.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/bandwebsite/header/picturebar.js")"></script>
+        
+    </head>
+    <body>
+        <div class="page">
+            @Html.Partial("_PageHeaderPartial")
+            <section id="main">
+                @RenderBody()
+            </section>
+            @Html.Partial("_PageFooterPartial")
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,12 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Blog.BlogArticleDetailsModel
+
+@{
+    ViewBag.Title = "Article";
+}
+
+<div class="detail">
+    @Html.Partial("_Item", Model)
+    <p>
+        @Html.ActionLink("<< Back to List", "Index")
+    </p>
+</div>

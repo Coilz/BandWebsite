@@ -1,0 +1,92 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Performance.UpdatePerformanceModel
+
+@{
+    ViewBag.Title = "Edit performance";
+}
+
+<div class="detail">
+
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true, "Performance editting was unsuccessful. Please correct the errors and try again.")
+        <div>
+            <fieldset>
+                <legend>Edit Performance</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Date)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Date)
+                    @Html.ValidationMessageFor(m => m.Date)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.StartTime)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.StartTime)
+                    @Html.ValidationMessageFor(m => m.StartTime)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.EndTime)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.EndTime)
+                    @Html.ValidationMessageFor(m => m.EndTime)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.VenueName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.VenueName)
+                    @Html.ValidationMessageFor(m => m.VenueName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.VenueUrl)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.VenueUrl)
+                    @Html.ValidationMessageFor(m => m.VenueUrl)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.City)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.City)
+                    @Html.ValidationMessageFor(m => m.City)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Price)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Price)
+                    @Html.ValidationMessageFor(m => m.Price)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Info)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Info)
+                    @Html.ValidationMessageFor(m => m.Info)
+                </div>
+
+                <p>
+                    <input type="submit" value="Done" />
+                    <span class="editLink">
+                        @Html.ActionLink("delete", "Delete", "Performance", new { id = Model.Id }, null)
+                    </span>
+                </p>
+
+            </fieldset>
+        </div>
+    }
+</div>

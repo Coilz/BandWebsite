@@ -1,0 +1,3 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Performance.PerformanceDetailsModel
+
+@Html.Raw(string.Format(@"<a href=""http://maps.google.nl/maps?q={0}"" target='_blank'>{1}</a>", @Model.City, @Model.City))

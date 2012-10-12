@@ -1,0 +1,27 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Home.AboutModel
+           
+@{
+    ViewBag.Title = "About Us";
+}
+
+<div class="detail">
+    <div class="item">
+    
+        <div class="title">
+            @ViewBag.Title
+            @if(Request.IsAuthenticated)
+            {
+                <span class="editLink">
+                    @Html.ActionLink("edit", "EditAbout", "Home")
+                </span>
+            }
+        </div>
+        <div class="content">
+            <span class="picture">
+                <img src="@Url.Content("~/Content/images/WoodLogoBlackTransBack.png")" alt="logo" />
+            </span>
+            @MvcHtmlString.Create(Model.Info)
+        </div>
+
+    </div>
+</div>

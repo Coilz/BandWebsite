@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div id="shop" class="entityview">
+    
+    <div class="leftColumn">
+        <div class="summary">
+            <div class="title">
+                Shop
+                @if(Request.IsAuthenticated)
+                {
+                    <span class="editLink">
+@*                        @Html.ActionLink("new", "Create", "Shop")*@
+                    </span>
+                }
+            </div>
+            <div class="items">
+                Coming soon...
+@*
+                @foreach (var item in Model.Items)
+                {
+                    @Html.Partial("_Item", item)
+                }
+*@
+            </div>
+        </div>
+    </div>
+
+    <div class="rightColumn">
+        <div class="summary">
+            <div class="filter">
+                <div class="title">
+                    Article type
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

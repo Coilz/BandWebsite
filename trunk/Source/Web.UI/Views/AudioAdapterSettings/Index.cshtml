@@ -1,0 +1,68 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.AudioAdapterSettings.AudioAdapterSettingsDetailsModel
+
+@{
+    ViewBag.Title = "Audio adapter settings";
+}
+
+<div class="detail">
+    <div class="title">
+        @ViewBag.Title
+        @if(Request.IsAuthenticated)
+        {
+            <span class="editLink">
+                @Html.ActionLink("edit", "Edit", "AudioAdapterSettings")
+            </span>
+            <span class="editLink">
+                @Html.ActionLink("upload", "UploadAudio", "AudioAdapterSettings")
+            </span>
+            <span class="editLink">
+                @Html.ActionLink("authorize", "Authorize", "AudioAdapterSettings")
+            </span>
+        }
+    </div>
+    <div class="content">
+        
+        <div class="display-label">
+            @Html.LabelFor(m => m.FullName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(settings => settings.FullName)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(m => m.UserName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(settings => settings.UserName)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(m => m.UserId)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(settings => settings.UserId)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(m => m.SetName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(settings => settings.SetName)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(m => m.CreationDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(settings => settings.CreationDate)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(m => m.ModificationDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(settings => settings.ModificationDate)
+        </div>
+
+    </div>
+</div>

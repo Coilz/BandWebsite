@@ -1,0 +1,40 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.Home.AboutUpdateModel
+
+@{
+    ViewBag.Title = "Edit About Us";
+}
+
+<div class="detail">
+
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true, "About us editting was unsuccessful. Please correct the errors and try again.")
+        <div>
+            <fieldset>
+                <legend>
+                    @ViewBag.Title
+                </legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.DateFounded)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.DateFounded)
+                    @Html.ValidationMessageFor(m => m.DateFounded)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Info)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Info)
+                    @Html.ValidationMessageFor(m => m.Info)
+                </div>
+                
+                <p>
+                    <input type="submit" value="Done" />
+                </p>
+
+            </fieldset>
+        </div>
+    }
+</div>

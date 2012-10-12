@@ -1,0 +1,18 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.ItemListModel<Ewk.BandWebsite.Web.UI.Models.PhotoAdapterSettings.PhotoDetailsModel>
+
+<div id="pictureBar">
+    @if(Request.IsAuthenticated)
+    {
+        <span class="editLink">
+            @Html.ActionLink("photo settings", "Index", "PhotoAdapterSettings")
+        </span>
+    }
+    <div id="pictures" class="noWrap">
+        @foreach (var item in Model.Items)
+        {
+            <a class="picture" rel="picturebar" href="@item.Uri.AbsoluteUri">
+                <img src="@item.Uri.AbsoluteUri" />
+            </a>
+        }
+    </div>
+</div>

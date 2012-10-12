@@ -1,0 +1,27 @@
+﻿<footer>
+    @*
+    @Html.Partial("_FacebookPartial")
+    <div class="soclialSharing">
+        <div class="twitter">
+            <a href="https://twitter.com/Woodmusic" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false"></a>
+            <script type="text/javascript">
+                !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
+            </script>
+        </div>
+        <div class="facebook">
+            <div class="fb-like" data-href="https://www.facebook.com/pages/Wood/90831982172" data-send="false" data-layout="button_count" data-width="20" data-show-faces="false" data-font="tahoma"></div>
+        </div>
+    </div>
+*@
+    <div class="links">
+        <span>
+            @Html.ActionLink("About", "About", "Home")
+        </span>
+        <span>
+            @Html.Partial("_LogOnPartial")
+        </span>
+    </div>
+    <div class="copyRight noWrap">
+        Design and Programming © 2012 Erwin Konink.
+    </div>
+</footer>
