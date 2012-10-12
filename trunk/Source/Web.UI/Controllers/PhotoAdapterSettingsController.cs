@@ -143,7 +143,7 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
             catch
             {
                 ModelState.AddModelError("", ExceptionMessages.GenericExceptionMessage);
-                return PartialView("_Photos", new ItemListModel<PhotoDetailsModel> {Items = new List<PhotoDetailsModel>()});
+                return PartialView("_Photos", new ItemListModel<PhotoDetailsModel> {Title = "Photos", Items = new List<PhotoDetailsModel>()});
             }
         }
 

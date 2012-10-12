@@ -96,7 +96,7 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
             catch
             {
                 ModelState.AddModelError("", ExceptionMessages.GenericExceptionMessage);
-                return PartialView("_AudioSummary", new ItemListModel<AudioDetailsModel> { Items = new List<AudioDetailsModel>() });
+                return PartialView("_AudioSummary", new ItemListModel<AudioDetailsModel> {Title = "Music", Items = new List<AudioDetailsModel>() });
             }
         }
 

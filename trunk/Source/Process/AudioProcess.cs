@@ -48,8 +48,8 @@ namespace Ewk.BandWebsite.Process
 
         public IEnumerable<AudioTrack> GetAudioTracks()
         {
-            var adapterSettings = BandRepository.GetAdapterSettings(AdapterName);
-            if (adapterSettings.OAuthAccessToken == null)
+            var adapterSettings = GetAdapterSettings();
+            if (adapterSettings == null || adapterSettings.OAuthAccessToken == null)
             {
                 throw new AuthorizationException();
             }
@@ -59,7 +59,7 @@ namespace Ewk.BandWebsite.Process
 
         public IEnumerable<AudioTrack> GetAudioTracks(int page, int pageSize)
         {
-            var adapterSettings = BandRepository.GetAdapterSettings(AdapterName);
+            var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
             {
                 throw new AuthorizationException();
@@ -70,7 +70,7 @@ namespace Ewk.BandWebsite.Process
 
         public AudioTrack GetAudioTrack(int id)
         {
-            var adapterSettings = BandRepository.GetAdapterSettings(AdapterName);
+            var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
             {
                 throw new AuthorizationException();

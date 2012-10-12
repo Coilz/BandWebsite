@@ -37,7 +37,7 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
             catch
             {
                 ModelState.AddModelError("", ExceptionMessages.GenericExceptionMessage);
-                return View(new ItemListModel<AudioDetailsModel> { Items = new List<AudioDetailsModel>() });
+                return View(new ItemListModel<AudioDetailsModel> { Title = "Music", Items = new List<AudioDetailsModel>() });
             }
         }
 

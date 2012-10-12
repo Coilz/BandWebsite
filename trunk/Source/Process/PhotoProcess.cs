@@ -61,7 +61,7 @@ namespace Ewk.BandWebsite.Process
 
         public IEnumerable<Uri> GetPhotos()
         {
-            var adapterSettings = BandRepository.GetAdapterSettings(AdapterName);
+            var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
             {
                 throw new AuthorizationException();
@@ -79,7 +79,7 @@ namespace Ewk.BandWebsite.Process
             if (photo == null) throw new ArgumentNullException("photo");
             if (string.IsNullOrEmpty(fileName)) throw new ArgumentNullException("fileName");
 
-            var adapterSettings = BandRepository.GetAdapterSettings(AdapterName);
+            var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
             {
                 throw new AuthorizationException();
