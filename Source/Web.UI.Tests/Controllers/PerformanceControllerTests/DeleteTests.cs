@@ -11,7 +11,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.PerformanceControllerTests
         [TestMethod]
         public void When_Delete_is_called_with_an_Id_then_GetPerformance_on_IPerformanceProcess_is_called_and_the_result_used_to_call_RemovePerformance_on_IPerformanceProcess()
         {
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             PerformanceProcess
                 .Expect(process =>

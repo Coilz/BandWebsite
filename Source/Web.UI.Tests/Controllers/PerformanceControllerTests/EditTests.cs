@@ -14,7 +14,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.PerformanceControllerTests
         [TestMethod]
         public void When_Edit_is_called_with_an_Id_then_GetPerformance_on_IPerformanceProcess_is_called_and_the_result_is_mapped_with_PerformanceMapper()
         {
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             PerformanceProcess
                 .Expect(process =>
@@ -47,7 +47,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.PerformanceControllerTests
         [TestMethod]
         public void When_Edit_is_called_with_a_model_then_Map_on_PerformanceMapper_is_called_and_the_result_is_used_to_call_UpdatePerformance_on_IPerformanceProcess_with()
         {
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             PerformanceProcess
                 .Expect(process =>

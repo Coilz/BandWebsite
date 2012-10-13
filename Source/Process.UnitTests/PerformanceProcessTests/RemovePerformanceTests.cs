@@ -11,7 +11,7 @@ namespace Ewk.BandWebsite.Process.UnitTests.PerformanceProcessTests
         [TestMethod]
         public void When_RemovePerformance_is_called_with_a_Performance_then_RemovePerformance_on_the_BandRepository_is_called_with_that_Performance()
         {
-            var performance = PerformanceCreator.CreateSingle();
+            var performance = PerformanceCreator.CreateSingleFuture();
 
             BandRepository
                 .Expect(repository =>

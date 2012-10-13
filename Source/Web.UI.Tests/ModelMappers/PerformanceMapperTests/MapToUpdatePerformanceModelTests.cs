@@ -9,7 +9,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
         [TestMethod]
         public void When_Performance_is_mapped_to_an_UpdatePerformanceModel_then_all_corresponding_fields_are_mapped()
         {
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             var result = Mapper.MapToUpdate(entity);
 
@@ -27,7 +27,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
         [TestMethod]
         public void When_Performance_is_mapped_to_an_UpdatePerformanceModel_and_the_VenueUri_is_null_then_all_corresponding_fields_are_mapped_and_the_result_VenueUrl_is_stringEmpty()
         {
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
             entity.VenueUri = null;
 
             var result = Mapper.MapToUpdate(entity);

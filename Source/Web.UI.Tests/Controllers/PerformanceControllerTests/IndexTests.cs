@@ -16,7 +16,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.PerformanceControllerTests
         [TestMethod]
         public void When_Index_is_called_GetPerformances_on_IPerformanceProcess_is_called_and_the_result_is_mapped_with_PerformanceMapper()
         {
-            var performances = PerformanceCreator.CreateCollection();
+            var performances = PerformanceCreator.CreateFutureCollection();
 
             PerformanceProcess
                 .Expect(process =>

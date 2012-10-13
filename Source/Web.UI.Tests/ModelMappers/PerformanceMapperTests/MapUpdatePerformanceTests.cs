@@ -16,7 +16,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
             var startDateTime = DateTime.Now.AddDays(37);
             var endDateTime = startDateTime.AddHours(4);
 
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             PerformanceProcess
                 .Expect(process =>
@@ -57,7 +57,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
             var startDateTime = DateTime.Now.AddDays(37);
             var endDateTime = startDateTime.AddHours(4);
 
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             PerformanceProcess
                 .Expect(process =>
@@ -99,7 +99,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
             var startDateTime = DateTime.Now.AddDays(37);
             var endDateTime = startDateTime.AddHours(4);
 
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             PerformanceProcess
                 .Expect(process =>

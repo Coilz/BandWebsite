@@ -13,7 +13,7 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
         [TestMethod]
         public void When_GetPerformance_is_called_with_an_Id_then_the_Performance_with_the_corresponding_Id_is_retrieved_from_the_collection()
         {
-            var performances = PerformanceCreator.CreateCollection();
+            var performances = PerformanceCreator.CreateFutureCollection();
             var performanceId = performances.ElementAt(2).Id;
 
             BandCatalog
@@ -33,7 +33,7 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
         [TestMethod, ExpectedException(typeof(InvalidOperationException))]
         public void When_GetPerformance_is_called_with_an_Id_and_there_is_no_Performance_in_the_collection_with_that_Id_then_an_InvalidOperationException_is_thrown()
         {
-            var performances = PerformanceCreator.CreateCollection();
+            var performances = PerformanceCreator.CreateFutureCollection();
             var performanceId = Guid.NewGuid();
 
             BandCatalog
@@ -46,9 +46,11 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
         }
 
         [TestMethod]
-        public void When_GetAllPerformances_is_called_then_all_Performances_are_retrieved_from_the_collection()
+        public void When_GetAllPerformances_is_called_then_all_future_Performances_are_retrieved_from_the_collection()
         {
-            var performances = PerformanceCreator.CreateCollection();
+            var futurePerformances = PerformanceCreator.CreateFutureCollection();
+            var pastPerformances = PerformanceCreator.CreatePastCollection();
+            var performances = pastPerformances.Union(futurePerformances);
 
             BandCatalog
                 .Expect(catalog => catalog.Performances)
@@ -59,8 +61,80 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
             var result = Repository.GetAllPerformances();
 
             Assert.IsNotNull(result);
-            Assert.AreEqual(performances.Count(), result.Count());
-            Assert.AreEqual(performances.First(), result.First());
+            Assert.AreEqual(futurePerformances.Count(), result.Count());
+            Assert.AreEqual(futurePerformances.First(), result.First());
+
+            BandCatalog.VerifyAllExpectations();
+        }
+
+        [TestMethod]
+        public void When_GetPerformances_is_called_then_the_specified_number_of_future_Performances_are_retrieved_from_the_collection()
+        {
+            const int page = 0;
+            const int pageSize = 3;
+
+            var futurePerformances = PerformanceCreator.CreateFutureCollection();
+            var pastPerformances = PerformanceCreator.CreatePastCollection();
+            var performances = pastPerformances.Union(futurePerformances);
+
+            BandCatalog
+                .Expect(catalog => catalog.Performances)
+                .Return(performances)
+                .Repeat.Once();
+            BandCatalog.Replay();
+
+            var result = Repository.GetPerformances(page, pageSize);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(pageSize, result.Count());
+            Assert.AreEqual(futurePerformances.First(), result.First());
+
+            BandCatalog.VerifyAllExpectations();
+        }
+
+        [TestMethod]
+        public void When_GetAllPastPerformances_is_called_then_all_past_Performances_are_retrieved_from_the_collection()
+        {
+            var futurePerformances = PerformanceCreator.CreateFutureCollection();
+            var pastPerformances = PerformanceCreator.CreatePastCollection();
+            var performances = pastPerformances.Union(futurePerformances);
+
+            BandCatalog
+                .Expect(catalog => catalog.Performances)
+                .Return(performances)
+                .Repeat.Once();
+            BandCatalog.Replay();
+
+            var result = Repository.GetAllPastPerformances();
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(pastPerformances.Count(), result.Count());
+            Assert.AreEqual(pastPerformances.First(), result.First());
+
+            BandCatalog.VerifyAllExpectations();
+        }
+
+        [TestMethod]
+        public void When_GetPastPerformances_is_called_then_the_specified_number_of_past_Performances_are_retrieved_from_the_collection()
+        {
+            const int page = 0;
+            const int pageSize = 3;
+
+            var futurePerformances = PerformanceCreator.CreateFutureCollection();
+            var pastPerformances = PerformanceCreator.CreatePastCollection();
+            var performances = pastPerformances.Union(futurePerformances);
+
+            BandCatalog
+                .Expect(catalog => catalog.Performances)
+                .Return(performances)
+                .Repeat.Once();
+            BandCatalog.Replay();
+
+            var result = Repository.GetPastPerformances(page, pageSize);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual(pageSize, result.Count());
+            Assert.AreEqual(pastPerformances.First(), result.First());
 
             BandCatalog.VerifyAllExpectations();
         }
@@ -68,7 +142,7 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
         [TestMethod]
         public void When_AddPerformance_is_called_with_a_Performance_then_the_Performance_is_added_to_the_collection()
         {
-            var performance = PerformanceCreator.CreateSingle();
+            var performance = PerformanceCreator.CreateSingleFuture();
 
             BandCatalog
                 .Expect(catalog => catalog.Add(performance))
@@ -100,7 +174,7 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
         [TestMethod]
         public void When_UpdatePerformance_is_called_with_a_Performance_then_the_Performance_is_updated_in_the_collection()
         {
-            var performance = PerformanceCreator.CreateSingle();
+            var performance = PerformanceCreator.CreateSingleFuture();
 
             BandCatalog
                 .Expect(catalog => catalog.Update(performance))
@@ -132,7 +206,7 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
         [TestMethod]
         public void When_RemovePerformance_is_called_with_a_Performance_then_the_Performance_is_removed_from_the_collection()
         {
-            var performance = PerformanceCreator.CreateSingle();
+            var performance = PerformanceCreator.CreateSingleFuture();
 
             BandCatalog
                 .Expect(catalog => catalog.Remove(performance))
