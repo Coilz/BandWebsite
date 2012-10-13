@@ -11,7 +11,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.PerformanceControllerTests
         [TestMethod]
         public void When_Details_is_called_GetPerformance_on_IPerformanceProcess_is_called_with_the_correct_parameter_and_the_result_is_mapped_with_PerformanceMapper()
         {
-            var performance = PerformanceCreator.CreateSingle();
+            var performance = PerformanceCreator.CreateSingleFuture();
 
             PerformanceProcess
                 .Expect(process =>

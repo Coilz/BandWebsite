@@ -18,7 +18,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
                 .Repeat.Never();
             PerformanceProcess.Replay();
 
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
 
             var result = Mapper.MapToDetail(entity);
 
@@ -45,7 +45,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
                 .Repeat.Never();
             PerformanceProcess.Replay();
 
-            var entities = PerformanceCreator.CreateCollection();
+            var entities = PerformanceCreator.CreateFutureCollection();
 
             var result = Mapper.Map(entities);
 
@@ -77,7 +77,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests
                 .Repeat.Never();
             PerformanceProcess.Replay();
 
-            var entity = PerformanceCreator.CreateSingle();
+            var entity = PerformanceCreator.CreateSingleFuture();
             entity.VenueUri = null;
 
             var result = Mapper.MapToDetail(entity);

@@ -8,25 +8,50 @@ namespace Ewk.BandWebsite.UnitTests.ModelCreators
 {
     public static class PerformanceCreator
     {
-        public static IQueryable<Performance> CreateCollection()
+        public static IQueryable<Performance> CreateFutureCollection()
         {
             return new List<Performance>
                        {
-                           CreateSingle(),
-                           CreateSingle(),
-                           CreateSingle(),
-                           CreateSingle(),
-                           CreateSingle(),
+                           CreateSingleFuture(),
+                           CreateSingleFuture(),
+                           CreateSingleFuture(),
+                           CreateSingleFuture(),
+                           CreateSingleFuture(),
                        }
                 .AsQueryable();
         }
 
-        public static Performance CreateSingle()
+        public static IQueryable<Performance> CreatePastCollection()
+        {
+            return new List<Performance>
+                       {
+                           CreateSinglePast(),
+                           CreateSinglePast(),
+                           CreateSinglePast(),
+                           CreateSinglePast(),
+                           CreateSinglePast(),
+                       }
+                .AsQueryable();
+        }
+
+        public static Performance CreateSingleFuture()
+        {
+            var start = DateTime.UtcNow.AddMonths(1);
+            return CreateSingle(start);
+        }
+
+        public static Performance CreateSinglePast()
+        {
+            var start = DateTime.UtcNow.AddMonths(-1);
+            return CreateSingle(start);
+        }
+
+        public static Performance CreateSingle(DateTime start)
         {
             var entity = new Performance
                                   {
-                                      StartDateTime = DateTime.UtcNow.AddMonths(1),
-                                      EndDateTime = DateTime.UtcNow.AddMonths(1).AddHours(3),
+                                      StartDateTime = start,
+                                      EndDateTime = start.AddHours(3),
                                       Price = DateTime.UtcNow.Ticks,
                                   };
 

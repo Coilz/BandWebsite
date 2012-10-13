@@ -11,7 +11,7 @@ namespace Ewk.BandWebsite.Process.UnitTests.PerformanceProcessTests
         [TestMethod]
         public void When_GetPerformances_is_called_with_a_valid_Guid_then_GetPerformance_on_the_BandRepository_is_called_with_that_Guid()
         {
-            var performances = PerformanceCreator.CreateCollection();
+            var performances = PerformanceCreator.CreateFutureCollection();
 
             BandRepository
                 .Expect(repository =>
