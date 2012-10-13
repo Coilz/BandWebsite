@@ -38,7 +38,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.PerformanceControllerTests
                 .Repeat.Once();
             PerformanceMapper.Replay();
 
-            var result = Controller.Index().Result as ViewResult;
+            var result = Controller.Future().Result as PartialViewResult;
             Assert.IsNotNull(result);
 
             var model = result.Model as ItemListModel<PerformanceDetailsModel>;

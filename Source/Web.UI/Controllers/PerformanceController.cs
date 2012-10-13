@@ -12,23 +12,42 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
 {
     public class PerformanceController : ControllerBase
     {
-        //
-        // GET: /Performance/
+        public ActionResult Index()
+        {
+            return View();
+        }
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Future()
         {
             return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
-                    {
-                        var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceProcess>(container);
-                        var entities = process.GetPerformances()
-                            .ToList();
+                {
+                    var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceProcess>(container);
+                    var entities = process.GetPerformances()
+                        .ToList();
 
-                        var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceMapper>(container);
-                        var model = mapper.Map(entities);
+                    var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceMapper>(container);
+                    var model = mapper.Map(entities);
 
-                        return View(model);
-                    });
+                    return PartialView("_Future", model);
+                });
+        }
+
+        public async Task<ActionResult> Past()
+        {
+            return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                container =>
+                {
+                    var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceProcess>(container);
+                    var entities = process.GetPastPerformances()
+                        .ToList();
+
+                    var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceMapper>(container);
+                    var model = mapper.Map(entities);
+                    model.Title = "History";
+
+                    return PartialView("_Past", model);
+                });
         }
 
         //
