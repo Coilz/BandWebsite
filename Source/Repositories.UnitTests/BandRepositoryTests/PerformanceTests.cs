@@ -58,7 +58,7 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
                 .Repeat.Once();
             BandCatalog.Replay();
 
-            var result = Repository.GetAllPerformances();
+            var result = Repository.GetAllFuturePerformances();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(futurePerformances.Count(), result.Count());
@@ -83,7 +83,7 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
                 .Repeat.Once();
             BandCatalog.Replay();
 
-            var result = Repository.GetPerformances(page, pageSize);
+            var result = Repository.GetFuturePerformances(page, pageSize);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(pageSize, result.Count());

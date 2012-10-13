@@ -34,7 +34,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.HomeControllerTests
 
             BlogProcess
                 .Expect(process =>
-                        process.GetBlogArticles(0, 3))
+                        process.GetBlogArticles(0, blogArticleCount))
                 .Return(blogArticles)
                 .Repeat.Once();
             BlogProcess.Replay();
@@ -44,7 +44,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.HomeControllerTests
             BlogArticleMapper
                 .Expect(mapper =>
                         mapper.Map(
-                            Arg<IEnumerable<BlogArticle>>.Matches(articles => articles.Count() == blogArticleCount),
+                            Arg<IEnumerable<BlogArticle>>.Matches(articles => articles.Count() == blogArticles.Count()),
                             Arg<IEnumerable<User>>.Matches(users => users.ToList().Any(u => u == user))))
                 .Return(blogArticleDetailsModelcollection)
                 .Repeat.Once();

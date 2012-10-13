@@ -17,7 +17,7 @@ namespace Ewk.BandWebsite.Process.UnitTests.PerformanceProcessTests
 
             BandRepository
                 .Expect(repository =>
-                        repository.GetAllPerformances())
+                        repository.GetAllFuturePerformances())
                 .Return(performances)
                 .Repeat.Once();
             BandRepository.Replay();
@@ -37,7 +37,7 @@ namespace Ewk.BandWebsite.Process.UnitTests.PerformanceProcessTests
 
             BandRepository
                 .Expect(repository =>
-                        repository.GetPerformances(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
+                        repository.GetFuturePerformances(Arg<int>.Is.Anything, Arg<int>.Is.Anything))
                 .Return(performances)
                 .Repeat.Once();
             BandRepository.Replay();

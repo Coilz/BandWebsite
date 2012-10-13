@@ -22,7 +22,6 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                     {
                         var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceProcess>(container);
                         var entities = process.GetPerformances()
-                            .OrderBy(entity => entity.StartDateTime)
                             .ToList();
 
                         var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceMapper>(container);

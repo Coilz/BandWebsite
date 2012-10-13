@@ -126,14 +126,20 @@ namespace Ewk.BandWebsite.Repositories
 
         public IEnumerable<BlogArticle> GetAllBlogArticles()
         {
-            return _catalogsContainer.BandCatalog.BlogArticles;
+            return QueryBlogArticles();
         }
 
         public IEnumerable<BlogArticle> GetBlogArticles(int page, int pageSize)
         {
-            return _catalogsContainer.BandCatalog.BlogArticles
-                .Skip(page*pageSize)
+            return QueryBlogArticles()
+                .Skip(page * pageSize)
                 .Take(pageSize);
+        }
+
+        IQueryable<BlogArticle> QueryBlogArticles()
+        {
+            return _catalogsContainer.BandCatalog.BlogArticles
+                .OrderByDescending(article => article.ModificationDate);
         }
 
         #endregion
@@ -175,12 +181,12 @@ namespace Ewk.BandWebsite.Repositories
             return result;
         }
 
-        public IEnumerable<Performance> GetAllPerformances()
+        public IEnumerable<Performance> GetAllFuturePerformances()
         {
             return QueryPerformances();
         }
 
-        public IEnumerable<Performance> GetPerformances(int page, int pageSize)
+        public IEnumerable<Performance> GetFuturePerformances(int page, int pageSize)
         {
             return QueryPerformances()
                 .Skip(page*pageSize)
@@ -202,13 +208,15 @@ namespace Ewk.BandWebsite.Repositories
         IQueryable<Performance> QueryPerformances()
         {
             return _catalogsContainer.BandCatalog.Performances
-                .Where(performance => performance.StartDateTime >= DateTime.UtcNow);
+                .Where(performance => performance.StartDateTime >= DateTime.UtcNow)
+                .OrderBy(performance => performance.StartDateTime);
         }
 
         IQueryable<Performance> QueryPastPerformances()
         {
             return _catalogsContainer.BandCatalog.Performances
-                .Where(performance => performance.StartDateTime < DateTime.UtcNow);
+                .Where(performance => performance.StartDateTime < DateTime.UtcNow)
+                .OrderByDescending(performance => performance.StartDateTime);
         }
 
         #endregion

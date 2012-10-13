@@ -23,12 +23,12 @@ namespace Ewk.BandWebsite.Process
 
         public IEnumerable<Performance> GetPerformances()
         {
-            return BandRepository.GetAllPerformances();
+            return BandRepository.GetAllFuturePerformances();
         }
 
         public IEnumerable<Performance> GetPerformances(int page, int pageSize)
         {
-            return BandRepository.GetPerformances(page, pageSize);
+            return BandRepository.GetFuturePerformances(page, pageSize);
         }
 
         public IEnumerable<Performance> GetPastPerformances()

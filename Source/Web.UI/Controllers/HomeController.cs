@@ -107,8 +107,6 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                     {
                         var blogProcess = CatalogsConsumerHelper.ResolveCatalogsConsumer<IBlogProcess>(container);
                         var blogArticles = blogProcess.GetBlogArticles(0, count)
-                            .OrderByDescending(article => article.ModificationDate)
-                            .Take(count)
                             .ToList();
 
                         var authorIds = blogArticles
@@ -132,7 +130,6 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                 {
                     var performanceProcess = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceProcess>(container);
                     var performances = performanceProcess.GetPerformances(0, count)
-                        .OrderBy(performance => performance.StartDateTime)
                         .ToList();
 
                     var performanceMapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPerformanceMapper>(container);
