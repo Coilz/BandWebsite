@@ -1,0 +1,22 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.ItemListModel<Ewk.BandWebsite.Web.UI.Models.Performance.PerformanceDetailsModel>
+
+<div class="performance summary">
+    
+    <div class="title">
+        @Model.Title
+        @if(Request.IsAuthenticated)
+        {
+            <span class="editLink">
+                @Html.ActionLink("new", "Create", "Performance")
+            </span>
+        }
+    </div>
+
+    <div class="items">
+        @foreach (var item in Model.Items)
+        {
+            @Html.Partial("~/Views/Performance/_Item.cshtml", item)
+        }
+    </div>
+
+</div>

@@ -42,3 +42,7 @@
 .performance .info.column {
     display: none;
 }
+
+.performance.history {
+    color: #999;
+}

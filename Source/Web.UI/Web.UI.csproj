@@ -299,6 +299,8 @@
     <Content Include="Views\AudioAdapterSettings\Edit.cshtml" />
     <Content Include="Views\AudioAdapterSettings\Index.cshtml" />
     <Content Include="Views\AudioAdapterSettings\UploadAudio.cshtml" />
+    <Content Include="Views\Performance\_Future.cshtml" />
+    <Content Include="Views\Performance\_Past.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
