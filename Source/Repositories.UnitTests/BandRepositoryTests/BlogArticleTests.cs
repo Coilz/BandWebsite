@@ -60,7 +60,6 @@ namespace Ewk.BandWebsite.Repositories.UnitTests.BandRepositoryTests
 
             Assert.IsNotNull(result);
             Assert.AreEqual(blogArticles.Count(), result.Count());
-            Assert.AreEqual(blogArticles, result);
 
             BandCatalog.VerifyAllExpectations();
         }

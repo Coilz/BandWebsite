@@ -23,7 +23,6 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                     {
                         var blogProcess = CatalogsConsumerHelper.ResolveCatalogsConsumer<IBlogProcess>(container);
                         var blogArticles = blogProcess.GetBlogArticles()
-                            .OrderByDescending(article => article.ModificationDate)
                             .ToList();
 
                         var authorIds = blogArticles

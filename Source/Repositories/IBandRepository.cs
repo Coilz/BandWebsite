@@ -149,7 +149,7 @@ namespace Ewk.BandWebsite.Repositories
         /// Gets a list of all upcoming <see cref="Performance"/> instances that are contained in the catalog.
         /// </summary>
         /// <returns>A list of all <see cref="Performance"/> instances.</returns>
-        IEnumerable<Performance> GetAllPerformances();
+        IEnumerable<Performance> GetAllFuturePerformances();
 
         /// <summary>
         /// Gets a list of some upcoming <see cref="Performance"/> instances that are contained in the catalog.
@@ -157,7 +157,7 @@ namespace Ewk.BandWebsite.Repositories
         /// <param name="page">The page number (zero based).</param>
         /// <param name="pageSize">The size of a page.</param>
         /// <returns>A list of some <see cref="Performance"/> instances.</returns>
-        IEnumerable<Performance> GetPerformances(int page, int pageSize);
+        IEnumerable<Performance> GetFuturePerformances(int page, int pageSize);
 
         /// <summary>
         /// Gets a list of all past <see cref="Performance"/> instances that are contained in the catalog.
