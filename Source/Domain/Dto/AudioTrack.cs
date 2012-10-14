@@ -1,6 +1,9 @@
-﻿namespace Ewk.BandWebsite.Domain.Dto
+﻿using System.Collections.Generic;
+using Ewk.BandWebsite.Domain.BandModel;
+
+namespace Ewk.BandWebsite.Domain.Dto
 {
-    public class AudioTrack
+    public class AudioTrack : ICommentable
     {
         /// <summary>
         /// Identifier.
@@ -36,5 +39,11 @@
         /// Artwork Url.
         /// </summary>
         public string ArtworkUri { get; set; }
+
+        #region Implementation of ICommentable
+
+        public IEnumerable<Comment> Comments { get; set; }
+
+        #endregion
     }
 }

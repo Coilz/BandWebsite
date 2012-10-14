@@ -197,7 +197,7 @@ footer .copyRight {
 }
 
 .items .item {
-    border-top: 0.1em solid #ccc;
+    border-top: 0.1em dashed #ccc;
 }
 .items .item:hover {
     background-color: #eee;

@@ -4,6 +4,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using Ewk.BandWebsite.Domain.BandModel;
+using Ewk.BandWebsite.Domain.Dto;
 
 namespace Ewk.BandWebsite.Adapters.Flickr
 {
@@ -19,7 +20,7 @@ namespace Ewk.BandWebsite.Adapters.Flickr
             _flickr = new FlickrNet.Flickr(apiKey, apiSecret);
         }
 
-        #region Implementation of IOAuth2
+        #region Implementation of IOAuth1
 
         public OAuthRequestToken GetOAuthRequestToken(Uri requestUri)
         {
@@ -62,7 +63,7 @@ namespace Ewk.BandWebsite.Adapters.Flickr
 
         #region Implementation of IPhotoAdapter
 
-        public IEnumerable<string> GetItems(string setName, OAuthAccessToken accessToken)
+        public IEnumerable<Photo> GetItems(string setName, OAuthAccessToken accessToken)
         {
             if (accessToken == null) throw new ArgumentNullException("accessToken");
 
@@ -73,8 +74,7 @@ namespace Ewk.BandWebsite.Adapters.Flickr
                 var publicPhotos = _flickr.PeopleGetPublicPhotos(accessToken.UserId);
 
                 return publicPhotos
-                    .Select(photo =>
-                            photo.LargeUrl);
+                    .Select(Map);
             }
 
             var photoSets = _flickr.PhotosetsGetList();
@@ -83,14 +83,13 @@ namespace Ewk.BandWebsite.Adapters.Flickr
 
             if (photoSet == null)
             {
-                return new List<string>();
+                return new List<Photo>();
             }
             
             var photos = _flickr.PhotosetsGetPhotos(photoSet.PhotosetId);
             
             return photos
-                .Select(photo =>
-                        photo.LargeUrl);
+                .Select(Map);
         }
 
         public string UploadItem(Stream data, string setName, string fileName, OAuthAccessToken accessToken)
@@ -129,6 +128,35 @@ namespace Ewk.BandWebsite.Adapters.Flickr
             }
 
             return photoId;
+        }
+
+        private static Photo Map(FlickrNet.Photo photo)
+        {
+            return new Photo
+                {
+                    Id = photo.PhotoId,
+
+                    OriginalUrl = photo.OriginalUrl,
+                    OriginalWidth = photo.OriginalWidth,
+                    OriginalHeigth = photo.OriginalHeight,
+
+                    LargeUrl = photo.LargeUrl,
+                    LargeWidth = photo.LargeWidth,
+                    LargeHeight = photo.LargeHeight,
+
+                    MediumUrl = photo.MediumUrl,
+                    MediumWidth = photo.MediumWidth,
+                    MediumHeight = photo.MediumHeight,
+
+                    SmallUrl = photo.SmallUrl,
+                    SmallWidth = photo.SmallWidth,
+                    SmallHeight = photo.SmallHeight,
+
+                    WebUrl = photo.WebUrl,
+
+                    Description = photo.Description,
+                    Title = photo.Title,
+                };
         }
 
         #endregion

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Ewk.BandWebsite.Domain.BandModel;
+using Ewk.BandWebsite.Domain.Dto;
 
 namespace Ewk.BandWebsite.Adapters
 {
@@ -11,8 +12,8 @@ namespace Ewk.BandWebsite.Adapters
         /// </summary>
         /// <param name="setName">The name of the set to get photos from.</param>
         /// <param name="accessToken">The token that provides access to the resource.</param>
-        /// <returns>A list of urls of photos.</returns>
-        IEnumerable<string> GetItems(string setName, OAuthAccessToken accessToken);
+        /// <returns>A list of photos.</returns>
+        IEnumerable<Photo> GetItems(string setName, OAuthAccessToken accessToken);
 
         /// <summary>
         /// Uploads a photo.

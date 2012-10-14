@@ -68,6 +68,9 @@
     <Compile Include="AppModel\Band.cs" />
     <Compile Include="BandModel\BandEntity.cs" />
     <Compile Include="BandModel\BlogArticle.cs" />
+    <Compile Include="BandModel\Comment.cs" />
+    <Compile Include="Dto\Photo.cs" />
+    <Compile Include="ICommentable.cs" />
     <Compile Include="BandModel\Musician.cs" />
     <Compile Include="BandModel\OAuthAccessToken.cs" />
     <Compile Include="BandModel\OAuthRequestToken.cs" />

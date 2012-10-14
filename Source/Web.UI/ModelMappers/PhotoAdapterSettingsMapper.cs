@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Collections.Generic;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Domain.BandModel;
+using Ewk.BandWebsite.Domain.Dto;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Web.UI.Models;
 using Ewk.BandWebsite.Web.UI.Models.PhotoAdapterSettings;
@@ -22,15 +22,30 @@ namespace Ewk.BandWebsite.Web.UI.ModelMappers
 
         #region Implementation of IPhotoAdapterSettingsMapper
 
-        public PhotoDetailsModel Map(Uri photo)
+        public PhotoDetailsModel Map(Photo photo)
         {
             return new PhotoDetailsModel
                        {
-                           Uri = photo,
+                           Id = photo.Id,
+                           Title = photo.Title,
+                           Description = photo.Description,
+                           LargeUrl = photo.LargeUrl,
+                           LargeHeight = photo.LargeHeight,
+                           LargeWidth = photo.LargeWidth,
+                           MediumUrl = photo.MediumUrl,
+                           MediumHeight = photo.MediumHeight,
+                           MediumWidth = photo.MediumWidth,
+                           OriginalUrl = photo.OriginalUrl,
+                           OriginalHeigth = photo.OriginalHeigth,
+                           OriginalWidth = photo.OriginalWidth,
+                           SmallUrl = photo.SmallUrl,
+                           SmallHeight = photo.SmallHeight,
+                           SmallWidth = photo.SmallWidth,
+                           WebUrl = photo.WebUrl,
                        };
         }
 
-        public ItemListModel<PhotoDetailsModel> Map(IEnumerable<Uri> photos)
+        public ItemListModel<PhotoDetailsModel> Map(IEnumerable<Photo> photos)
         {
             return new ItemListModel<PhotoDetailsModel>
                        {
