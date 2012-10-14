@@ -312,9 +312,14 @@ div#pictures .picture img:hover {
 ----------------------------------------------------------*/
 div.menu {
     position: relative;
-    background-color: #3f3f3f;
+    width: 900px;
+    margin: auto;
 }
-
+@media only screen and (max-width: 500px) {
+    div.menu {
+        width: 100%;
+    }
+}
 div.menu div {
     display: inline;
 }
@@ -322,17 +327,16 @@ div.menu div {
     div.menu div {
         display: block;
         text-align: center;
+        width: 100%;
     }
 }
 
 div.menu div a {
     padding: 0.7em 1.4em;
-    border-right: 1px solid #999;
-    font-weight: bold;
+    font-size: 2em;
     text-decoration: none;
     line-height: 2.8em;
     white-space: nowrap;
-    color: #f3f3f3;
 }
 @media only screen and (max-width: 500px) {
     div.menu div a {
@@ -341,6 +345,7 @@ div.menu div a {
         border-bottom: 1px solid #999;
         line-height: 2em;
         display: block;
+        width: 100%;
     }
 }
 
@@ -442,25 +447,7 @@ table th {
 
 nav, 
 #menucontainer {
-    margin: 2em 0 0 0;
-}
-@media only screen and (max-height: 700px) {
-    nav, 
-    #menucontainer {
-        margin: 1.5em 0 0 0;
-    }
-}
-@media only screen and (max-height: 600px) {
-    nav, 
-    #menucontainer {
-        margin: 0.8em 0 0 0;
-    }
-}
-@media only screen and (max-height: 500px) {
-    nav, 
-    #menucontainer {
-        margin: 0;
-    }
+    margin: auto;
 }
 
 div#title {

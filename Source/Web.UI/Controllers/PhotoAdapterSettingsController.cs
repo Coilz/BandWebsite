@@ -137,13 +137,13 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                         var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IPhotoAdapterSettingsMapper>(container);
                         var model = mapper.Map(entities);
 
-                        return PartialView("_Photos", model);
+                        return PartialView("/Views/Photo/_Photos.cshtml", model);
                     });
             }
             catch
             {
                 ModelState.AddModelError("", ExceptionMessages.GenericExceptionMessage);
-                return PartialView("_Photos", new ItemListModel<PhotoDetailsModel> {Title = "Photos", Items = new List<PhotoDetailsModel>()});
+                return PartialView("/Views/Photo/_Photos.cshtml", new ItemListModel<PhotoDetailsModel> { Title = "Photos", Items = new List<PhotoDetailsModel>() });
             }
         }
 

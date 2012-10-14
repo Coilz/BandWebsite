@@ -10,9 +10,7 @@
     <div id="pictures" class="noWrap">
         @foreach (var item in Model.Items)
         {
-            <a class="picture" rel="picturebar" href="@item.LargeUrl">
-                <img src="@item.SmallUrl" alt="@item.Title" />
-            </a>
+            @Html.Partial("~/Views/Photo/_Photo.cshtml", item)
         }
     </div>
 </div>

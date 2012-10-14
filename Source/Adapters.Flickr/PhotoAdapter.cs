@@ -130,6 +130,8 @@ namespace Ewk.BandWebsite.Adapters.Flickr
             return photoId;
         }
 
+        #endregion
+
         private static Photo Map(FlickrNet.Photo photo)
         {
             return new Photo
@@ -158,7 +160,5 @@ namespace Ewk.BandWebsite.Adapters.Flickr
                     Title = photo.Title,
                 };
         }
-
-        #endregion
     }
 }
