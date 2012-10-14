@@ -5,6 +5,7 @@ using System.Linq;
 using Ewk.BandWebsite.Adapters;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Domain.BandModel;
+using Ewk.BandWebsite.Domain.Dto;
 using Ewk.Configuration;
 using Ewk.Extensions;
 
@@ -59,7 +60,7 @@ namespace Ewk.BandWebsite.Process
             UpdateAdapterSettings(entity);
         }
 
-        public IEnumerable<Uri> GetPhotos()
+        public IEnumerable<Photo> GetPhotos()
         {
             var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
@@ -67,11 +68,7 @@ namespace Ewk.BandWebsite.Process
                 throw new AuthorizationException();
             }
 
-            var urls = PhotoAdapter.GetItems(adapterSettings.SetName, adapterSettings.OAuthAccessToken);
-
-            return urls
-                .Select(url =>
-                        new Uri(url));
+            return PhotoAdapter.GetItems(adapterSettings.SetName, adapterSettings.OAuthAccessToken);
         }
 
         public string AddPhoto(Stream photo, string fileName)

@@ -4,7 +4,6 @@ to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
 body {
-    background-color: #f0f0f0;
     font-size: .85em;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif !important;
     margin: 0;
@@ -72,25 +71,20 @@ h5, h6 {
 
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
+section {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* you can specify a greater or lesser percentage for the 
 page width. Or, you can specify an exact pixel width. */
 .page {
-    background-color: white;
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    border-left: solid 1px #999;
-    border-right: solid 1px #999;
-    -webkit-box-shadow: 0 0 20em 0 #999;
-    -moz-box-shadow: 0 0 20em 0 #999;
-    -o-box-shadow: 0 0 20em 0 #999;
-    box-shadow: 0 0 20em 0 #999;
+        border: none;
 }
 @media only screen and (max-width: 900px) {
     .page {
         width: 100%;
-        border: none;
     }
 }
 
@@ -203,7 +197,7 @@ footer .copyRight {
 }
 
 .items .item {
-    border-top: 0.1em solid #ccc;
+    border-top: 0.1em dashed #ccc;
 }
 .items .item:hover {
     background-color: #eee;

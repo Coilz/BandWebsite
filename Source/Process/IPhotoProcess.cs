@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Ewk.BandWebsite.Domain.BandModel;
+using Ewk.BandWebsite.Domain.Dto;
 
 namespace Ewk.BandWebsite.Process
 {
@@ -27,7 +28,7 @@ namespace Ewk.BandWebsite.Process
         /// Gets the <see cref="Uri"/> instances of all stored photos.
         /// </summary>
         /// <returns>A list of <see cref="Uri"/> instances that point to stored photos.</returns>
-        IEnumerable<Uri> GetPhotos();
+        IEnumerable<Photo> GetPhotos();
 
         /// <summary>
         /// Adds a photo to the store.
