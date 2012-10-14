@@ -301,6 +301,7 @@
     <Content Include="Views\AudioAdapterSettings\UploadAudio.cshtml" />
     <Content Include="Views\Performance\_Future.cshtml" />
     <Content Include="Views\Performance\_Past.cshtml" />
+    <Content Include="Views\Photo\_Photo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -427,7 +428,7 @@
     <Content Include="Views\PhotoAdapterSettings\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\PhotoAdapterSettings\_Photos.cshtml" />
+    <Content Include="Views\Photo\_Photos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
