@@ -15,7 +15,6 @@ namespace Ewk.BandWebsite.Adapters.SoundCloud
     {
         private readonly string _apiKey;
 
-
         public AudioAdapter()
         {
             _apiKey = ConfigurationManager.AppSettings["AudioApiKey"] ?? "daf9c365e9b0c127f9863841c6e85434";
