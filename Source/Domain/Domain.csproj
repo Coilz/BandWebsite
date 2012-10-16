@@ -70,6 +70,7 @@
     <Compile Include="BandModel\BlogArticle.cs" />
     <Compile Include="BandModel\Comment.cs" />
     <Compile Include="Dto\Photo.cs" />
+    <Compile Include="Dto\Video.cs" />
     <Compile Include="ICommentable.cs" />
     <Compile Include="BandModel\Musician.cs" />
     <Compile Include="BandModel\OAuthAccessToken.cs" />
