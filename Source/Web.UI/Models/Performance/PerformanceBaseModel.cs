@@ -7,7 +7,7 @@ namespace Ewk.BandWebsite.Web.UI.Models.Performance
     {
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd MMMM yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:d MMM yyyy (ddd)}")]
         public DateTime Date { get; set; }
 
         [Required]
