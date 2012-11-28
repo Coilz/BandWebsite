@@ -57,9 +57,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Ewk.Configuration, Version=1.1.4664.23364, Culture=neutral, PublicKeyToken=0ffe897e6e5722cd, processorArchitecture=MSIL">
+    <Reference Include="Ewk.Configuration, Version=1.1.4678.15497, Culture=neutral, PublicKeyToken=0ffe897e6e5722cd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ewk.Configuration.1.1.4664.23364\lib\net40\Ewk.Configuration.dll</HintPath>
+      <HintPath>..\packages\Ewk.Configuration.1.1.4678.15497\lib\net40\Ewk.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
@@ -91,7 +91,10 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -166,7 +169,6 @@
     <Content Include="Content\fancybox\fancybox_loading.gif" />
     <Content Include="Content\fancybox\fancybox_sprite.png" />
     <Content Include="Content\images\ajax-loader.gif" />
-    <Content Include="Content\images\ajax-loader.png" />
     <Content Include="Content\images\icons-18-black.png" />
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
@@ -183,10 +185,16 @@
     <Content Include="Content\bandwebsite\home.css" />
     <Content Include="Content\jquery.mobile-1.1.1.css" />
     <Content Include="Content\jquery.mobile-1.1.1.min.css" />
+    <Content Include="Content\jquery.mobile-1.2.0.css" />
+    <Content Include="Content\jquery.mobile-1.2.0.min.css" />
     <Content Include="Content\jquery.mobile.structure-1.1.1.css" />
     <Content Include="Content\jquery.mobile.structure-1.1.1.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.2.0.css" />
+    <Content Include="Content\jquery.mobile.structure-1.2.0.min.css" />
     <Content Include="Content\jquery.mobile.theme-1.1.1.css" />
     <Content Include="Content\jquery.mobile.theme-1.1.1.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.2.0.css" />
+    <Content Include="Content\jquery.mobile.theme-1.2.0.min.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -209,12 +217,15 @@
     <Content Include="Content\themes\base\jquery.ui.core.css" />
     <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
     <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
     <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
     <Content Include="Content\themes\base\jquery.ui.resizable.css" />
     <Content Include="Content\themes\base\jquery.ui.selectable.css" />
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -235,30 +246,33 @@
     <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Global.asax" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\bandwebsite\bandwebsite.js" />
     <Content Include="Scripts\bandwebsite\header\header.js" />
     <Content Include="Scripts\bandwebsite\header\picturebar.js" />
-    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="Scripts\jquery-1.8.2.js" />
-    <Content Include="Scripts\jquery-1.8.2.min.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <None Include="Scripts\jquery-1.8.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
     <Content Include="Scripts\jquery.carouFredSel-5.6.2.js" />
     <Content Include="Scripts\jquery.easing.1.3.js" />
     <Content Include="Scripts\jquery.fancybox-buttons.js" />
     <Content Include="Scripts\jquery.fancybox-media.js" />
     <Content Include="Scripts\jquery.fancybox-thumbs.js" />
     <Content Include="Scripts\jquery.fancybox.pack.js" />
-    <Content Include="Scripts\jquery.mobile-1.1.1.js" />
-    <Content Include="Scripts\jquery.mobile-1.1.1.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.2.0.js" />
+    <Content Include="Scripts\jquery.mobile-1.2.0.min.js" />
     <Content Include="Scripts\jquery.mousewheel-3.0.6.pack.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
