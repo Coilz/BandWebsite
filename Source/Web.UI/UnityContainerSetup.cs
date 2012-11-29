@@ -49,8 +49,8 @@ namespace Ewk.BandWebsite.Web.UI
                 .RegisterType<IAppCatalog, AppCatalog>()
                 .RegisterType<IBandCatalog, BandCatalog>()
 
-                .RegisterType<IBandIdResolver, BandIdContainer>()
-                .RegisterType<IBandIdInstaller, BandIdContainer>();
+                .RegisterType<IBandIdResolver, ThreadContextAccessor>()
+                .RegisterType<IBandIdInstaller, ThreadContextAccessor>();
 
             DependencyConfiguration.DependencyResolver = new UnityDependencyResolver(unityContainer);
         }

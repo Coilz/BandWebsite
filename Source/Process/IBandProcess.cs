@@ -1,8 +1,10 @@
-﻿using System;
-using Ewk.BandWebsite.Domain.AppModel;
+﻿using Ewk.BandWebsite.Domain.AppModel;
 
 namespace Ewk.BandWebsite.Process
 {
+    /// <summary>
+    /// Provides methods to process bands.
+    /// </summary>
     public interface IBandProcess
     {
         /// <summary>

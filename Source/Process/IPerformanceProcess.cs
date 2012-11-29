@@ -5,7 +5,7 @@ using Ewk.BandWebsite.Domain.BandModel;
 namespace Ewk.BandWebsite.Process
 {
     /// <summary>
-    /// Provides methods to process blog performances.
+    /// Provides methods to process performances.
     /// </summary>
     public interface IPerformanceProcess
     {

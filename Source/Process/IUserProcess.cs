@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Ewk.BandWebsite.Domain.AppModel;
 using Ewk.BandWebsite.Domain.BandModel;
 
 namespace Ewk.BandWebsite.Process
 {
+    /// <summary>
+    /// Provides methods to process users.
+    /// </summary>
     public interface IUserProcess
     {
         /// <summary>
