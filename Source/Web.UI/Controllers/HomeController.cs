@@ -9,6 +9,7 @@ using Ewk.BandWebsite.Web.UI.ModelMappers;
 using Ewk.BandWebsite.Web.UI.Models;
 using Ewk.BandWebsite.Web.UI.Models.AudioAdapterSettings;
 using Ewk.BandWebsite.Web.UI.Models.Home;
+using Ewk.BandWebsite.Web.UI.Models.VideoAdapterSettings;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {
@@ -71,9 +72,28 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
             return PartialView("_ShopSummary");
         }
 
-        public ActionResult Video(int count)
+        public async Task<ActionResult> Video(int count)
         {
-            return PartialView("_VideoSummary");
+            try
+            {
+                return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                    container =>
+                    {
+                        var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IVideoProcess>(container);
+                        var entities = process.GetVideos(0, count)
+                            .ToList();
+
+                        var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IVideoAdapterSettingsMapper>(container);
+                        var model = mapper.Map(entities);
+
+                        return PartialView("_VideoSummary", model);
+                    });
+            }
+            catch
+            {
+                ModelState.AddModelError("", ExceptionMessages.GenericExceptionMessage);
+                return PartialView("_VideoSummary", new ItemListModel<VideoDetailsModel> { Title = "Video", Items = new List<VideoDetailsModel>() });
+            }
         }
 
         public async Task<ActionResult> Music(int count)

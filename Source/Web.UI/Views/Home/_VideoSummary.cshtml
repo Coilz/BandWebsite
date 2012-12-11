@@ -1,19 +1,21 @@
-﻿@*
-@model Ewk.BandWebsite.Web.UI.Models.ItemListModel<Ewk.BandWebsite.Web.UI.Models.Video.VideoItem>
-*@
+﻿@model Ewk.BandWebsite.Web.UI.Models.ItemListModel<Ewk.BandWebsite.Web.UI.Models.VideoAdapterSettings.VideoDetailsModel>
 
 <div class="video summary">
     <div class="title">
-        @Html.ActionLink("Videos", "Index", "Video")
+        @Html.ActionLink(Model.Title, "Index", "Video")
+        @if(Request.IsAuthenticated)
+        {
+            <span class="editLink">
+                @Html.ActionLink("video settings", "Index", "VideoAdapterSettings")
+            </span>
+        }
     </div>
     <div class="items">
         Coming soon...
-@*
         @foreach (var item in Model.Items)
         {
-            @Html.Partial("~/Views/Video/_VideoItem.cshtml", item)
+            @Html.Partial("~/Views/Video/_Item.cshtml", item)
         }
-*@
     </div>
     <div class="footer">
         @Html.ActionLink("View more items", "Index", "Video")

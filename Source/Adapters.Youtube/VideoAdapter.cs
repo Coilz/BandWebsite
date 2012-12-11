@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
+using Ewk.BandWebsite.Domain.BandModel;
+using Ewk.BandWebsite.Domain.Dto;
 using Google.GData.Client;
 using Google.GData.YouTube;
-using Google.YouTube;
 
 namespace Ewk.BandWebsite.Adapters.Youtube
 {
-    public class VideoAdapter
+    public class VideoAdapter : IVideoAdapter
     {
         private readonly string _apiKey;
 
@@ -25,14 +27,14 @@ namespace Ewk.BandWebsite.Adapters.Youtube
             var videoStreams = request.GetVideoFeed("UserName").Entries.Select(video => video.MediaSource.GetDataStream());
         }
 
-        private YouTubeRequest GetRequest()
+        private Google.YouTube.YouTubeRequest GetRequest()
         {
-            var settings = new YouTubeRequestSettings("BandApp", _apiKey)
+            var settings = new Google.YouTube.YouTubeRequestSettings("BandApp", _apiKey)
                 {
                     AutoPaging = true
                 };
 
-            return new YouTubeRequest(settings);
+            return new Google.YouTube.YouTubeRequest(settings);
         }
 
         public IEnumerable<Google.YouTube.Playlist> PlayLists()
@@ -59,12 +61,12 @@ namespace Ewk.BandWebsite.Adapters.Youtube
             return GetVideos(query);
         }
 
-        private IEnumerable<Video> GetVideos(FeedQuery q)
+        private IEnumerable<Google.YouTube.Video> GetVideos(FeedQuery q)
         {
             try
             {
                 var request = GetRequest();
-                var feed = request.Get<Video>(q);
+                var feed = request.Get<Google.YouTube.Video>(q);
 
                 return feed.Entries;
             }
@@ -74,5 +76,39 @@ namespace Ewk.BandWebsite.Adapters.Youtube
                 return null;
             }
         }
+
+        #region Implementation of IVideoAdapter
+
+        public Uri GetOAuthCalculatedAuthorizationUri(Uri callbackUri)
+        {
+            throw new NotImplementedException();
+        }
+
+        public OAuthAccessToken GetOAuthAccessToken(Uri currentUri)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Video> GetItems(string setName, OAuthAccessToken accessToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Video> GetItems(string setName, OAuthAccessToken accessToken, int page, int pageSize)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Video GetItem(int id, OAuthAccessToken accessToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string UploadItem(Stream data, string setName, string title, OAuthAccessToken accessToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

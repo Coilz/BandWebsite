@@ -72,6 +72,7 @@
     <Compile Include="BandProcess.cs" />
     <Compile Include="BlogProcess.cs" />
     <Compile Include="AudioProcess.cs" />
+    <Compile Include="IVideoProcess.cs" />
     <Compile Include="IAudioProcess.cs" />
     <Compile Include="PhotoProcess.cs" />
     <Compile Include="IPhotoProcess.cs" />
