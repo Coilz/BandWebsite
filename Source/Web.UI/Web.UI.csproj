@@ -110,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\VideoAdapterSettingsController.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapper.cs" />
     <Compile Include="ModelMappers\IVideoAdapterSettingsMapper.cs" />
     <Compile Include="Models\VideoAdapterSettings\VideoAdapterSettingsBaseModel.cs" />
     <Compile Include="Models\VideoAdapterSettings\VideoAdapterSettingsDetailsModel.cs" />

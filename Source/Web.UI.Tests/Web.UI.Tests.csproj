@@ -113,6 +113,10 @@
     <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\MapToUpdateAudioAdapterSettingsModelTests.cs" />
     <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\MapUpdateAudioAdapterSettingsTests.cs" />
     <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\AudioAdapterSettingsMapperTestBase.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\AudioAdapterSettingsMapperTestBase.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\MapToAudioAdapterSettingsDetailsModelTests.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\MapToUpdateAudioAdapterSettingsModelTests.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\MapUpdateAudioAdapterSettingsTests.cs" />
     <Compile Include="ModelMappers\PerformanceMapperTests\PerformanceMapperTestBase.cs" />
     <Compile Include="ModelMappers\PerformanceMapperTests\MapAddPerformanceTests.cs" />
     <Compile Include="ModelMappers\PerformanceMapperTests\MapToPerformanceDetailsModelTests.cs" />
