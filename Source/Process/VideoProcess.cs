@@ -9,43 +9,33 @@ using Ewk.Configuration;
 
 namespace Ewk.BandWebsite.Process
 {
-    /// <summary>
-    /// Provides methods to process audio.
-    /// </summary>
-    public class AudioProcess : ProcessBase, IAudioProcess
+    public class VideoProcess : ProcessBase, IVideoProcess
     {
-        private IAudioAdapter _audioAdapter;
-        private const string AdapterName = "AudioAdapter";
+        private IVideoAdapter _videoAdapter;
+        private const string AdapterName = "VideoAdapter";
 
-        /// <summary>
+                /// <summary>
         /// Initializes a new instance.
         /// </summary>
         /// <param name="catalogsContainer">A container with all catalogs to access the store.</param>
-        public AudioProcess(ICatalogsContainer catalogsContainer)
+        public VideoProcess(ICatalogsContainer catalogsContainer)
             :base(catalogsContainer)
         {
         }
 
-        #region Implementation of IAudioProcess
+        #region Implementation of IVideoAdapter
 
-        public Uri GetAuthenticationUri(Uri callbackUrl)
+        public Uri GetAuthenticationUri(Uri callbackUri)
         {
-            return AudioAdapter.GetOAuthCalculatedAuthorizationUri(callbackUrl);
+            throw new NotImplementedException();
         }
 
         public void Authorize(Uri verificationUri)
         {
-            if (verificationUri == null) throw new ArgumentNullException("verificationUri");
-
-            var entity = GetAdapterSettings();
-
-            var accessToken = AudioAdapter.GetOAuthAccessToken(verificationUri);
-            entity.OAuthRequestToken = null;
-            entity.OAuthAccessToken = accessToken;
-            UpdateAdapterSettings(entity);
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<AudioTrack> GetAudioTracks()
+        public IEnumerable<Video> GetVideos()
         {
             var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
@@ -53,10 +43,10 @@ namespace Ewk.BandWebsite.Process
                 throw new AuthorizationException();
             }
 
-            return AudioAdapter.GetItems(adapterSettings.SetName, adapterSettings.OAuthAccessToken);
+            return VideoAdapter.GetItems(adapterSettings.SetName, adapterSettings.OAuthAccessToken);
         }
 
-        public IEnumerable<AudioTrack> GetAudioTracks(int page, int pageSize)
+        public IEnumerable<Video> GetVideos(int page, int pageSize)
         {
             var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
@@ -64,10 +54,10 @@ namespace Ewk.BandWebsite.Process
                 throw new AuthorizationException();
             }
 
-            return AudioAdapter.GetItems(adapterSettings.SetName, adapterSettings.OAuthAccessToken, page, pageSize);
+            return VideoAdapter.GetItems(adapterSettings.SetName, adapterSettings.OAuthAccessToken, page, pageSize);
         }
 
-        public AudioTrack GetAudioTrack(int id)
+        public Video GetVideo(int id)
         {
             var adapterSettings = GetAdapterSettings();
             if (adapterSettings.OAuthAccessToken == null)
@@ -75,12 +65,12 @@ namespace Ewk.BandWebsite.Process
                 throw new AuthorizationException();
             }
 
-            return AudioAdapter.GetItem(id, adapterSettings.OAuthAccessToken);
+            return VideoAdapter.GetItem(id, adapterSettings.OAuthAccessToken);
         }
 
-        public string AddAudio(Stream audio, string fileName)
+        public string AddVideo(Stream video, string fileName)
         {
-            if (audio == null) throw new ArgumentNullException("audio");
+            if (video == null) throw new ArgumentNullException("video");
             if (string.IsNullOrEmpty(fileName)) throw new ArgumentNullException("fileName");
 
             var adapterSettings = BandRepository.GetAdapterSettings(AdapterName);
@@ -89,7 +79,7 @@ namespace Ewk.BandWebsite.Process
                 throw new AuthorizationException();
             }
 
-            return AudioAdapter.UploadItem(audio, adapterSettings.SetName, fileName, adapterSettings.OAuthAccessToken);
+            return VideoAdapter.UploadItem(video, adapterSettings.SetName, fileName, adapterSettings.OAuthAccessToken);
         }
 
         public AdapterSettings GetAdapterSettings()
@@ -113,11 +103,12 @@ namespace Ewk.BandWebsite.Process
 
         #endregion
 
-        private IAudioAdapter AudioAdapter
+
+        private IVideoAdapter VideoAdapter
         {
             get
             {
-                return _audioAdapter ?? (_audioAdapter = DependencyConfiguration.DependencyResolver.Resolve<IAudioAdapter>());
+                return _videoAdapter ?? (_videoAdapter = DependencyConfiguration.DependencyResolver.Resolve<IVideoAdapter>());
             }
         }
     }

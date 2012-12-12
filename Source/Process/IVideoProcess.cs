@@ -39,6 +39,13 @@ namespace Ewk.BandWebsite.Process
         IEnumerable<Video> GetVideos(int page, int pageSize);
 
         /// <summary>
+        /// Gets an <see cref="Video"/>.
+        /// </summary>
+        /// <param name="id">The identifier of the <see cref="Video"/>.</param>
+        /// <returns>An <see cref="Video"/>.</returns>
+        Video GetVideo(int id);
+
+        /// <summary>
         /// Adds a audio to the store.
         /// </summary>
         /// <param name="audio">The stream that represents the audio to store.</param>
@@ -58,12 +65,5 @@ namespace Ewk.BandWebsite.Process
         /// <param name="settings">The <see cref="AdapterSettings"/> to update in the store.</param>
         /// <returns>The persisted <see cref="AdapterSettings"/>.</returns>
         AdapterSettings UpdateAdapterSettings(AdapterSettings settings);
-
-        /// <summary>
-        /// Gets an <see cref="Video"/>.
-        /// </summary>
-        /// <param name="id">The identifier of the <see cref="Video"/>.</param>
-        /// <returns>An <see cref="Video"/>.</returns>
-        Video GetVideo(int id);
     }
 }

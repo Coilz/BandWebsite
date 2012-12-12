@@ -75,6 +75,7 @@
     <Compile Include="ModelCreators\BandCreator.cs" />
     <Compile Include="ModelCreators\BlogArticleCreator.cs" />
     <Compile Include="ModelCreators\AudioTrackCreator.cs" />
+    <Compile Include="ModelCreators\VideoCreator.cs" />
     <Compile Include="ModelCreators\PhotoCreator.cs" />
     <Compile Include="ModelCreators\MusicianCreator.cs" />
     <Compile Include="ModelCreators\OAuthAccessTokenCreator.cs" />

@@ -87,6 +87,11 @@
     <Compile Include="AudioProcessTests\GetAudioTests.cs" />
     <Compile Include="AudioProcessTests\AudioProcessTestBase.cs" />
     <Compile Include="AudioProcessTests\UpdateAudioAdapterSettingsTests.cs" />
+    <Compile Include="VideoProcessTests\AddVideoTests.cs" />
+    <Compile Include="VideoProcessTests\VideoProcessTestBase.cs" />
+    <Compile Include="VideoProcessTests\GetVideoAdapterSettingsTests.cs" />
+    <Compile Include="VideoProcessTests\GetVideoTests.cs" />
+    <Compile Include="VideoProcessTests\UpdateVideoAdapterSettingsTests.cs" />
     <Compile Include="PerformanceProcessTests\AddPerformanceTests.cs" />
     <Compile Include="PerformanceProcessTests\RemovePerformanceTests.cs" />
     <Compile Include="PerformanceProcessTests\PerformanceProcessTestBase.cs" />
