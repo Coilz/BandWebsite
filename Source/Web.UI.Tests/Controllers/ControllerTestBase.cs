@@ -10,6 +10,7 @@ using Ewk.BandWebsite.Web.UI.Models.Blog;
 using Ewk.BandWebsite.Web.UI.Models.Home;
 using Ewk.BandWebsite.Web.UI.Models.Performance;
 using Ewk.BandWebsite.Web.UI.Models.PhotoAdapterSettings;
+using Ewk.BandWebsite.Web.UI.Models.VideoAdapterSettings;
 using Ewk.UnitTests;
 using Rhino.Mocks;
 
@@ -25,6 +26,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers
         protected IBlogArticleMapper BlogArticleMapper { get; private set; }
         protected IPerformanceMapper PerformanceMapper { get; private set; }
         protected IPhotoAdapterSettingsMapper PhotoAdapterSettingsMapper { get; private set; }
+        protected IVideoAdapterSettingsMapper VideoAdapterSettingsMapper { get; private set; }
 
         protected IAudioProcess AudioProcess { get; private set; }
         protected IBandProcess BandProcess { get; private set; }
@@ -32,6 +34,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers
         protected IUserProcess UserProcess { get; private set; }
         protected IPerformanceProcess PerformanceProcess { get; private set; }
         protected IPhotoProcess PhotoProcess { get; private set; }
+        protected IVideoProcess VideoProcess { get; private set; }
 
         protected override void AdditionalSetup()
         {
@@ -51,6 +54,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers
             BlogArticleMapper = MockHelper.CreateAndRegisterMock<IBlogArticleMapper>();
             PerformanceMapper = MockHelper.CreateAndRegisterMock<IPerformanceMapper>();
             PhotoAdapterSettingsMapper = MockHelper.CreateAndRegisterMock<IPhotoAdapterSettingsMapper>();
+            VideoAdapterSettingsMapper = MockHelper.CreateAndRegisterMock<IVideoAdapterSettingsMapper>();
 
             AudioProcess = MockHelper.CreateAndRegisterMock<IAudioProcess>();
             BandProcess = MockHelper.CreateAndRegisterMock<IBandProcess>();
@@ -58,6 +62,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers
             UserProcess = MockHelper.CreateAndRegisterMock<IUserProcess>();
             PerformanceProcess = MockHelper.CreateAndRegisterMock<IPerformanceProcess>();
             PhotoProcess = MockHelper.CreateAndRegisterMock<IPhotoProcess>();
+            VideoProcess = MockHelper.CreateAndRegisterMock<IVideoProcess>();
         }
 
         #region About
@@ -226,6 +231,35 @@ namespace Ewk.BandWebsite.Web.UI.Tests.Controllers
         protected static UpdateAudioAdapterSettingsModel CreateUpdateAudioAdapterSettingsModel(Guid id)
         {
             return new UpdateAudioAdapterSettingsModel
+            {
+                FullName = string.Format(CultureInfo.InvariantCulture, "FullName {0}", id),
+                UserId = string.Format(CultureInfo.InvariantCulture, "UserId {0}", id),
+                UserName = string.Format(CultureInfo.InvariantCulture, "UserName {0}", id),
+                SetName = string.Format(CultureInfo.InvariantCulture, "SetName {0}", id),
+            };
+        }
+
+        #endregion
+
+        #region VideoAdapterSettings
+
+        protected static VideoAdapterSettingsDetailsModel CreateVideoAdapterSettingsDetailsModel(Guid id)
+        {
+            return new VideoAdapterSettingsDetailsModel
+            {
+                Id = id,
+                CreationDate = DateTime.UtcNow.AddDays(-10),
+                ModificationDate = DateTime.UtcNow.AddDays(-3),
+                FullName = string.Format(CultureInfo.InvariantCulture, "FullName {0}", id),
+                UserId = string.Format(CultureInfo.InvariantCulture, "UserId {0}", id),
+                UserName = string.Format(CultureInfo.InvariantCulture, "UserName {0}", id),
+                SetName = string.Format(CultureInfo.InvariantCulture, "SetName {0}", id),
+            };
+        }
+
+        protected static UpdateVideoAdapterSettingsModel CreateUpdateVideoAdapterSettingsModel(Guid id)
+        {
+            return new UpdateVideoAdapterSettingsModel
             {
                 FullName = string.Format(CultureInfo.InvariantCulture, "FullName {0}", id),
                 UserId = string.Format(CultureInfo.InvariantCulture, "UserId {0}", id),

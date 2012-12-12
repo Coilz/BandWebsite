@@ -89,6 +89,9 @@
     <Compile Include="Controllers\AudioAdapterSettingsControllerTests\EditTests.cs" />
     <Compile Include="Controllers\AudioAdapterSettingsControllerTests\IndexTests.cs" />
     <Compile Include="Controllers\AudioAdapterSettingsControllerTests\AudioAdapterSettingsControllerTestBase.cs" />
+    <Compile Include="Controllers\VideoAdapterSettingsControllerTests\VideoAdapterSettingsControllerTestBase.cs" />
+    <Compile Include="Controllers\VideoAdapterSettingsControllerTests\EditTests.cs" />
+    <Compile Include="Controllers\VideoAdapterSettingsControllerTests\IndexTests.cs" />
     <Compile Include="Controllers\HomeControllerTests\AboutTests.cs" />
     <Compile Include="Controllers\PerformanceControllerTests\DeleteTests.cs" />
     <Compile Include="Controllers\PerformanceControllerTests\EditTests.cs" />
