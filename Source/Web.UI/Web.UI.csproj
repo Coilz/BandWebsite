@@ -357,6 +357,10 @@
       <Project>{F6CB9128-9F86-4C4D-9A76-2CB8E8424334}</Project>
       <Name>Adapters.SoundCloud</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Adapters.Youtube\Adapters.Youtube.csproj">
+      <Project>{A9CA72D3-9719-4336-BF1F-32C405E0B69C}</Project>
+      <Name>Adapters.Youtube</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Adapters\Adapters.csproj">
       <Project>{B68B4B97-1825-4393-9032-003A0695410D}</Project>
       <Name>Adapters</Name>
