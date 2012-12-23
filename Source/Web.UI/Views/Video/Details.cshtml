@@ -1,0 +1,17 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.VideoAdapterSettings.VideoDetailsModel
+
+@{
+    ViewBag.Title = "Video";
+}
+
+<div class="detail">
+    <div class="title">
+        @Model.Title
+    </div>
+    <div class="content">
+        <iframe width="100%" height="166" scrolling="no" frameborder="0" src="@Model.ResourceUri"></iframe>
+    </div>
+    <p>
+        @Html.ActionLink("<< Back to List", "Index")
+    </p>
+</div>

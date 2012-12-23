@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Web;
 using Ewk.BandWebsite.Common;
 
 namespace Ewk.BandWebsite.Web.UI
 {
-    public class BandIdContainer : IBandIdResolver, IBandIdInstaller
+    /// <summary>
+    /// Provides access to the ThreadContext.
+    /// </summary>
+    public class ThreadContextAccessor : IBandIdResolver, IBandIdInstaller
     {
         #region Implementation of IBandIdResolver
 

@@ -1,0 +1,15 @@
+﻿@model Ewk.BandWebsite.Web.UI.Models.VideoAdapterSettings.VideoDetailsModel
+           
+<div class="item">
+    <div class="title">
+        @Html.ActionLink(Model.Title, "Details", "Video", new { id = Model.Id }, null)
+    </div>
+    <div class="content">
+        <iframe width="100%" height="166" scrolling="no" frameborder="0" src="@Model.ResourceUri"></iframe>
+    </div>
+    <div class="footer">
+        <span class="detialLink">
+            @Html.ActionLink("more >>", "Details", "Video", new { id = Model.Id }, null)
+        </span>
+    </div>
+</div>
