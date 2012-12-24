@@ -27,7 +27,7 @@ namespace Ewk.BandWebsite.Catalogs.MongoDb
             var dbUrl = ConfigurationManager.AppSettings["MONGOLAB_URI"] ?? "mongodb://localhost/BandAppDb";
             var connectionString = string.Format(CultureInfo.InvariantCulture, "{0}?safe=true", dbUrl);
 
-            _database = new MongoClient(connectionString).GetServer().GetDatabase("BandAppDb");
+            _database = MongoDatabase.Create(connectionString);
         }
 
         #region Implementation of ICatalog
