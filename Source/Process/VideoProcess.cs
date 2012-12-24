@@ -14,7 +14,7 @@ namespace Ewk.BandWebsite.Process
         private IVideoAdapter _videoAdapter;
         private const string AdapterName = "VideoAdapter";
 
-                /// <summary>
+        /// <summary>
         /// Initializes a new instance.
         /// </summary>
         /// <param name="catalogsContainer">A container with all catalogs to access the store.</param>
@@ -102,7 +102,6 @@ namespace Ewk.BandWebsite.Process
         }
 
         #endregion
-
 
         private IVideoAdapter VideoAdapter
         {

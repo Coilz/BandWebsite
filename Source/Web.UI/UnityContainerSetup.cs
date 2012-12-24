@@ -1,6 +1,7 @@
 ﻿using Ewk.BandWebsite.Adapters;
 using Ewk.BandWebsite.Adapters.Flickr;
 using Ewk.BandWebsite.Adapters.SoundCloud;
+using Ewk.BandWebsite.Adapters.Youtube;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Catalogs.MongoDb;
 using Ewk.BandWebsite.Common;
@@ -26,6 +27,7 @@ namespace Ewk.BandWebsite.Web.UI
                 .RegisterType<IUserMapper, UserMapper>()
                 .RegisterType<IPerformanceMapper, PerformanceMapper>()
                 .RegisterType<IPhotoAdapterSettingsMapper, PhotoAdapterSettingsMapper>()
+                .RegisterType<IVideoAdapterSettingsMapper, VideoAdapterSettingsMapper>()
 
                 // Processes
                 .RegisterType<IAudioProcess, AudioProcess>()
@@ -34,11 +36,13 @@ namespace Ewk.BandWebsite.Web.UI
                 .RegisterType<IUserProcess, UserProcess>()
                 .RegisterType<IPerformanceProcess, PerformanceProcess>()
                 .RegisterType<IPhotoProcess, PhotoProcess>()
+                .RegisterType<IVideoProcess, VideoProcess>()
                 .RegisterType<ICryptographyProcess, CryptographyProcess>()
 
                 // Adapters
                 .RegisterType<IAudioAdapter, AudioAdapter>()
                 .RegisterType<IPhotoAdapter, PhotoAdapter>()
+                .RegisterType<IVideoAdapter, VideoAdapter>()
 
                 // Repositories
                 .RegisterType<IAppRepository, AppRepository>()
@@ -49,8 +53,8 @@ namespace Ewk.BandWebsite.Web.UI
                 .RegisterType<IAppCatalog, AppCatalog>()
                 .RegisterType<IBandCatalog, BandCatalog>()
 
-                .RegisterType<IBandIdResolver, BandIdContainer>()
-                .RegisterType<IBandIdInstaller, BandIdContainer>();
+                .RegisterType<IBandIdResolver, ThreadContextAccessor>()
+                .RegisterType<IBandIdInstaller, ThreadContextAccessor>();
 
             DependencyConfiguration.DependencyResolver = new UnityDependencyResolver(unityContainer);
         }

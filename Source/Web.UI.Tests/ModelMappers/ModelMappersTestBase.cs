@@ -11,6 +11,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers
         protected IUserProcess UserProcess { get; private set; }
         protected IPerformanceProcess PerformanceProcess { get; private set; }
         protected IPhotoProcess PhotoProcess { get; private set; }
+        protected IVideoProcess VideoProcess { get; private set; }
 
         protected override void AdditionalSetup()
         {
@@ -22,6 +23,7 @@ namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers
             UserProcess = MockHelper.CreateAndRegisterMock<IUserProcess>();
             PerformanceProcess = MockHelper.CreateAndRegisterMock<IPerformanceProcess>();
             PhotoProcess = MockHelper.CreateAndRegisterMock<IPhotoProcess>();
+            VideoProcess = MockHelper.CreateAndRegisterMock<IVideoProcess>();
         }
     }
 }

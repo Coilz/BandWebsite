@@ -89,6 +89,9 @@
     <Compile Include="Controllers\AudioAdapterSettingsControllerTests\EditTests.cs" />
     <Compile Include="Controllers\AudioAdapterSettingsControllerTests\IndexTests.cs" />
     <Compile Include="Controllers\AudioAdapterSettingsControllerTests\AudioAdapterSettingsControllerTestBase.cs" />
+    <Compile Include="Controllers\VideoAdapterSettingsControllerTests\VideoAdapterSettingsControllerTestBase.cs" />
+    <Compile Include="Controllers\VideoAdapterSettingsControllerTests\EditTests.cs" />
+    <Compile Include="Controllers\VideoAdapterSettingsControllerTests\IndexTests.cs" />
     <Compile Include="Controllers\HomeControllerTests\AboutTests.cs" />
     <Compile Include="Controllers\PerformanceControllerTests\DeleteTests.cs" />
     <Compile Include="Controllers\PerformanceControllerTests\EditTests.cs" />
@@ -113,6 +116,10 @@
     <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\MapToUpdateAudioAdapterSettingsModelTests.cs" />
     <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\MapUpdateAudioAdapterSettingsTests.cs" />
     <Compile Include="ModelMappers\AudioAdapterSettingsMapperTests\AudioAdapterSettingsMapperTestBase.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\AudioAdapterSettingsMapperTestBase.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\MapToAudioAdapterSettingsDetailsModelTests.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\MapToUpdateAudioAdapterSettingsModelTests.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapperTests\MapUpdateAudioAdapterSettingsTests.cs" />
     <Compile Include="ModelMappers\PerformanceMapperTests\PerformanceMapperTestBase.cs" />
     <Compile Include="ModelMappers\PerformanceMapperTests\MapAddPerformanceTests.cs" />
     <Compile Include="ModelMappers\PerformanceMapperTests\MapToPerformanceDetailsModelTests.cs" />

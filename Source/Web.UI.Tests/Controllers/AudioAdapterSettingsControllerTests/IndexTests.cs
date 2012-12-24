@@ -2,46 +2,45 @@
 using System.Web.Mvc;
 using Ewk.BandWebsite.Domain.BandModel;
 using Ewk.BandWebsite.UnitTests.ModelCreators;
-using Ewk.BandWebsite.Web.UI.Models.PhotoAdapterSettings;
-using Ewk.BandWebsite.Web.UI.Tests.Controllers.PhotoAdapterSettingsControllerTests;
+using Ewk.BandWebsite.Web.UI.Models.AudioAdapterSettings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 
 namespace Ewk.BandWebsite.Web.UI.Tests.Controllers.AudioAdapterSettingsControllerTests
 {
     [TestClass]
-    public class IndexTests : PhotoAdapterSettingsControllerTestBase
+    public class IndexTests : AudioAdapterSettingsControllerTestBase
     {
         [TestMethod]
-        public void When_Index_is_called_GetPhotoAdapterSettings_on_IPhotoAdapterSettingsProcess_is_called_and_the_result_is_mapped_with_PhotoAdapterSettingsMapper()
+        public void When_Index_is_called_GetAudioAdapterSettings_on_IAudioAdapterSettingsProcess_is_called_and_the_result_is_mapped_with_AudioAdapterSettingsMapper()
         {
             var adapterSettings = AdapterSettingsCreator.CreateSingle();
 
-            PhotoProcess
+            AudioProcess
                 .Expect(process =>
                         process.GetAdapterSettings())
                 .Return(adapterSettings)
                 .Repeat.Once();
-            PhotoProcess.Replay();
+            AudioProcess.Replay();
 
-            var photoAdapterSettingsDetailsModel = CreatePhotoAdapterSettingsDetailsModel(Guid.NewGuid());
+            var photoAdapterSettingsDetailsModel = CreateAudioAdapterSettingsDetailsModel(Guid.NewGuid());
 
-            PhotoAdapterSettingsMapper
+            AudioAdapterSettingsMapper
                 .Expect(mapper =>
                         mapper.MapToDetail(
                             Arg<AdapterSettings>.Matches(settings => settings.Id == adapterSettings.Id)))
                 .Return(photoAdapterSettingsDetailsModel)
                 .Repeat.Once();
-            PhotoAdapterSettingsMapper.Replay();
+            AudioAdapterSettingsMapper.Replay();
 
             var result = Controller.Index().Result as ViewResult;
             Assert.IsNotNull(result);
 
-            var model = result.Model as PhotoAdapterSettingsDetailsModel;
+            var model = result.Model as AudioAdapterSettingsDetailsModel;
             Assert.IsNotNull(model);
 
-            PhotoProcess.VerifyAllExpectations();
-            PhotoAdapterSettingsMapper.VerifyAllExpectations();
+            AudioProcess.VerifyAllExpectations();
+            AudioAdapterSettingsMapper.VerifyAllExpectations();
         }
     }
 }

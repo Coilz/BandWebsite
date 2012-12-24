@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Ewk.BandWebsite.Adapters;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Domain.BandModel;

@@ -109,7 +109,14 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BandIdContainer.cs" />
+    <Compile Include="Controllers\VideoAdapterSettingsController.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapper.cs" />
+    <Compile Include="ModelMappers\IVideoAdapterSettingsMapper.cs" />
+    <Compile Include="Models\VideoAdapterSettings\VideoAdapterSettingsBaseModel.cs" />
+    <Compile Include="Models\VideoAdapterSettings\VideoAdapterSettingsDetailsModel.cs" />
+    <Compile Include="Models\VideoAdapterSettings\VideoDetailsModel.cs" />
+    <Compile Include="Models\VideoAdapterSettings\UpdateVideoAdapterSettingsModel.cs" />
+    <Compile Include="ThreadContextAccessor.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogArticleController.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
@@ -316,6 +323,11 @@
     <Content Include="Views\Performance\_Future.cshtml" />
     <Content Include="Views\Performance\_Past.cshtml" />
     <Content Include="Views\Photo\_Photo.cshtml" />
+    <Content Include="Views\Video\Details.cshtml" />
+    <Content Include="Views\VideoAdapterSettings\Edit.cshtml" />
+    <Content Include="Views\VideoAdapterSettings\Index.cshtml" />
+    <Content Include="Views\VideoAdapterSettings\UploadVideo.cshtml" />
+    <Content Include="Views\Video\_Item.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,6 +356,10 @@
     <ProjectReference Include="..\Adapters.SoundCloud\Adapters.SoundCloud.csproj">
       <Project>{F6CB9128-9F86-4C4D-9A76-2CB8E8424334}</Project>
       <Name>Adapters.SoundCloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Adapters.Youtube\Adapters.Youtube.csproj">
+      <Project>{A9CA72D3-9719-4336-BF1F-32C405E0B69C}</Project>
+      <Name>Adapters.Youtube</Name>
     </ProjectReference>
     <ProjectReference Include="..\Adapters\Adapters.csproj">
       <Project>{B68B4B97-1825-4393-9032-003A0695410D}</Project>

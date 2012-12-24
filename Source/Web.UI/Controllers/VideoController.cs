@@ -1,103 +1,148 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+using Ewk.BandWebsite.Catalogs;
+using Ewk.BandWebsite.Process;
+using Ewk.BandWebsite.Resources;
+using Ewk.BandWebsite.Web.UI.ModelMappers;
+using Ewk.BandWebsite.Web.UI.Models;
+using Ewk.BandWebsite.Web.UI.Models.VideoAdapterSettings;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {
     public class VideoController : Controller
     {
         //
-        // GET: /Video/
+        // GET: /News/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-/*
-        //
-        // GET: /Video/Details/5
-
-        public ActionResult Details(Guid id)
-        {
-            return View();
-        }
-
-        //
-        // GET: /Video/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        } 
-
-        //
-        // POST: /Video/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Index()
         {
             try
             {
-                // TODO: Add insert logic here
+                return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                    container =>
+                    {
+                        var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IVideoProcess>(container);
+                        var entities = process.GetVideos()
+                            .ToList();
 
-                return RedirectToAction("Index");
+                        var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IVideoAdapterSettingsMapper>(container);
+                        var model = mapper.Map(entities);
+
+                        return View(model);
+                    });
             }
             catch
             {
+                ModelState.AddModelError("", ExceptionMessages.GenericExceptionMessage);
+                return View(new ItemListModel<VideoDetailsModel> { Title = "Video", Items = new List<VideoDetailsModel>() });
+            }
+        }
+
+        //
+        // GET: /News/Details/5
+
+        public async Task<ActionResult> Details(int id)
+        {
+            try
+            {
+                return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                    container =>
+                    {
+                        var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IVideoProcess>(container);
+                        var entity = process.GetVideo(id);
+
+                        var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IVideoAdapterSettingsMapper>(container);
+                        var model = mapper.Map(entity);
+
+                        return View(model);
+                    });
+            }
+            catch
+            {
+                ModelState.AddModelError("", ExceptionMessages.GenericExceptionMessage);
                 return View();
             }
         }
+        /*
+                //
+                // GET: /News/Create
+
+                public ActionResult Create()
+                {
+                    return View();
+                } 
+
+                //
+                // POST: /News/Create
+
+                [HttpPost]
+                public ActionResult Create(FormCollection collection)
+                {
+                    try
+                    {
+                        // TODO: Add insert logic here
+
+                        return RedirectToAction("Index");
+                    }
+                    catch
+                    {
+                        return View();
+                    }
+                }
         
-        //
-        // GET: /Video/Edit/5
-
-        public ActionResult Edit(Guid id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Video/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(Guid id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
+                //
+                // GET: /News/Edit/5
  
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+                public ActionResult Edit(int id)
+                {
+                    return View();
+                }
 
-        //
-        // GET: /Video/Delete/5
+                //
+                // POST: /News/Edit/5
 
-        public ActionResult Delete(Guid id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Video/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(Guid id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+                [HttpPost]
+                public ActionResult Edit(int id, FormCollection collection)
+                {
+                    try
+                    {
+                        // TODO: Add update logic here
  
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-*/
+                        return RedirectToAction("Index");
+                    }
+                    catch
+                    {
+                        return View();
+                    }
+                }
+
+                //
+                // GET: /News/Delete/5
+ 
+                public ActionResult Delete(int id)
+                {
+                    return View();
+                }
+
+                //
+                // POST: /News/Delete/5
+
+                [HttpPost]
+                public ActionResult Delete(int id, FormCollection collection)
+                {
+                    try
+                    {
+                        // TODO: Add delete logic here
+ 
+                        return RedirectToAction("Index");
+                    }
+                    catch
+                    {
+                        return View();
+                    }
+                }
+        */
     }
 }
