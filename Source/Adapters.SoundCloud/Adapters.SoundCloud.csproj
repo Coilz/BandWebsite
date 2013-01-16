@@ -36,13 +36,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ewk.Extensions, Version=1.1.4678.15497, Culture=neutral, PublicKeyToken=0ffe897e6e5722cd, processorArchitecture=MSIL">
+    <Reference Include="Ewk.Extensions, Version=1.1.4759.21149, Culture=neutral, PublicKeyToken=0ffe897e6e5722cd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ewk.Extensions.1.1.4678.15497\lib\net40\Ewk.Extensions.dll</HintPath>
+      <HintPath>..\packages\Ewk.Extensions.1.1.4759.21149\lib\net45\Ewk.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Ewk.SoundCloud.ApiLibrary, Version=1.1.4667.42298, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ewk.SoundCloud.ApiLibrary.1.1.4667.42298\lib\net45\Ewk.SoundCloud.ApiLibrary.dll</HintPath>
+    <Reference Include="Ewk.SoundCloud.ApiLibrary">
+      <HintPath>..\packages\Ewk.SoundCloud.ApiLibrary.1.1.4764.36164\lib\net45\Ewk.SoundCloud.ApiLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
