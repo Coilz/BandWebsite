@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
 using Ewk.BandWebsite.Domain.BandModel;
 using Ewk.BandWebsite.Domain.Dto;
 using Google.GData.Client;
@@ -19,7 +17,7 @@ namespace Ewk.BandWebsite.Adapters.Youtube
 
         public VideoAdapter()
         {
-            _apiKey = ConfigurationManager.AppSettings["VideoApiKey"] ?? "AI39si6Hg6vvtVi5Q9BOxXK35kGSRvQrle9twwIfjNPtkvdL-awrCH5Ti3YWOHyHDPjNxK0yvlBor-sRNcwSXnnG5q1BdzkJ0A";
+            _apiKey = ConfigurationManager.AppSettings["VideoApiKey"] ?? "978012847617.apps.googleusercontent.com";
 
             AuthSubUtil.getRequestUrl("RedirectUrl", "scope", true, true);
 
@@ -81,7 +79,18 @@ namespace Ewk.BandWebsite.Adapters.Youtube
 
         public Uri GetOAuthCalculatedAuthorizationUri(Uri callbackUri)
         {
-            throw new NotImplementedException();
+            var apiSecret = ConfigurationManager.AppSettings["VideoApiSecret"] ?? "nnb4e_-c3TSKzf8kmwrgp5wr";
+
+            var parameters = new OAuth2Parameters
+                {
+                    ClientId = _apiKey,
+                    ClientSecret = apiSecret,
+                    Scope = "http://gdata.youtube.com",
+                };
+
+            var authenticator = new OAuth2Authenticator("BandApp", parameters);
+
+            return authenticator.ApplyAuthenticationToUri(callbackUri);
         }
 
         public OAuthAccessToken GetOAuthAccessToken(Uri currentUri)
