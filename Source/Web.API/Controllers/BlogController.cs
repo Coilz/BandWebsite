@@ -5,21 +5,17 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Security;
 using Ewk.BandWebsite.Catalogs;
-using Ewk.BandWebsite.Common;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Web.Common.ModelMappers;
 using Ewk.BandWebsite.Web.Common.Models.Blog;
-using Ewk.Configuration;
 
 namespace Ewk.BandWebsite.Web.API.Controllers
 {
     public class BlogController : ApiController
     {
+        [BandIdFilter]
         public async Task<IQueryable<BlogArticleDetailsModel>> GetAsync(Guid bandId)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                     {
@@ -39,11 +35,9 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                     });
         }
 
+        [BandIdFilter]
         public async Task<IEnumerable<BlogArticleDetailsModel>> GetAsync(Guid bandId, int page, int pageSize)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                     {
@@ -63,11 +57,9 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                     });
         }
 
+        [BandIdFilter]
         public async Task<BlogArticleDetailsModel> GetAsync(Guid bandId, Guid id)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                     {
@@ -82,12 +74,9 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                     });
         }
 
-        [Authorize]
+        [Authorize, BandIdFilter]
         public void Post(Guid bandId, [FromBody]AddBlogArticleModel model)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             CatalogsConsumerHelper.ExecuteWithCatalogScope(
                 container =>
                     {
@@ -102,12 +91,9 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                     });
         }
 
-        [Authorize]
+        [Authorize, BandIdFilter]
         public async Task Put(Guid bandId, Guid id, [FromBody] UpdateBlogArticleModel model)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                     {
@@ -119,12 +105,9 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                     });
         }
 
-        [Authorize]
+        [Authorize, BandIdFilter]
         public async Task Delete(Guid bandId, Guid id)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                     {

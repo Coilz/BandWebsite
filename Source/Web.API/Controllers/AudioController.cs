@@ -4,21 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Ewk.BandWebsite.Catalogs;
-using Ewk.BandWebsite.Common;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Web.Common.ModelMappers;
 using Ewk.BandWebsite.Web.Common.Models.AudioAdapterSettings;
-using Ewk.Configuration;
 
 namespace Ewk.BandWebsite.Web.API.Controllers
 {
     public class AudioController : ApiController
     {
+        [BandIdFilter]
         public async Task<IQueryable<AudioDetailsModel>> GetAsync(Guid bandId)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                 {
@@ -31,11 +27,9 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                 });
         }
 
+        [BandIdFilter]
         public async Task<IEnumerable<AudioDetailsModel>> GetAsync(Guid bandId, int page, int pageSize)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                 {
@@ -48,11 +42,9 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                 });
         }
 
+        [BandIdFilter]
         public async Task<AudioDetailsModel> GetAsync(Guid bandId, int id)
         {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
             return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
                 container =>
                 {
