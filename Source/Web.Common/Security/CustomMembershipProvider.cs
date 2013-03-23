@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Web.Security;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Common;
@@ -8,7 +8,7 @@ using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Web.Common.ModelMappers;
 using Ewk.Configuration;
 
-namespace Ewk.BandWebsite.Web.UI.Security
+namespace Ewk.BandWebsite.Web.Common.Security
 {
     public class CustomMembershipProvider : MembershipProvider
     {

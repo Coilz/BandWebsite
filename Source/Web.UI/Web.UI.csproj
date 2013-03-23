@@ -138,8 +138,6 @@
     <Compile Include="Controllers\PhotoAdapterSettingsController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
-    <Compile Include="Security\CustomMembershipProvider.cs" />
-    <Compile Include="Security\CustomRoleProvider.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

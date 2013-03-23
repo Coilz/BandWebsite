@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Web.Security;
 
-namespace Ewk.BandWebsite.Web.UI.Security
+namespace Ewk.BandWebsite.Web.Common.Security
 {
     public class CustomRoleProvider : RoleProvider
     {
