@@ -31,22 +31,6 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                 });
         }
 
-        public async Task<AudioDetailsModel> GetAsync(Guid bandId, int id)
-        {
-            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
-            bandIdInstaller.SetBandId(bandId);
-
-            return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
-                container =>
-                {
-                    var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioProcess>(container);
-                    var entity = process.GetAudioTrack(id);
-
-                    var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioAdapterSettingsMapper>(container);
-                    return mapper.Map(entity);
-                });
-        }
-
         public async Task<IEnumerable<AudioDetailsModel>> GetAsync(Guid bandId, int page, int pageSize)
         {
             var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
@@ -61,6 +45,22 @@ namespace Ewk.BandWebsite.Web.API.Controllers
 
                     var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioAdapterSettingsMapper>(container);
                     return mapper.Map(entities).Items;
+                });
+        }
+
+        public async Task<AudioDetailsModel> GetAsync(Guid bandId, int id)
+        {
+            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
+            bandIdInstaller.SetBandId(bandId);
+
+            return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                container =>
+                {
+                    var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioProcess>(container);
+                    var entity = process.GetAudioTrack(id);
+
+                    var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioAdapterSettingsMapper>(container);
+                    return mapper.Map(entity);
                 });
         }
     }
