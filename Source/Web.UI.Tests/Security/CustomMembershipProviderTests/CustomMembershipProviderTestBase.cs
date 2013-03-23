@@ -2,7 +2,7 @@
 using Ewk.BandWebsite.Domain.BandModel;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.UnitTests;
-using Ewk.BandWebsite.Web.UI.ModelMappers;
+using Ewk.BandWebsite.Web.Common.ModelMappers;
 using Ewk.BandWebsite.Web.UI.Security;
 
 namespace Ewk.BandWebsite.Web.UI.Tests.Security.CustomMembershipProviderTests

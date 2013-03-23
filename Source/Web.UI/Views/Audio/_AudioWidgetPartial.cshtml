@@ -1,0 +1,6 @@
+﻿@model Ewk.BandWebsite.Web.Common.Models.AudioAdapterSettings.AudioDetailsModel
+
+<iframe width="100%" height="166" scrolling="no" frameborder="0" src="@string.Format("http://w.soundcloud.com/player?url={0}&auto_play=false&show_artwork=true&color=ff7700",
+                                                                                     HttpUtility.UrlEncode(Model.ResourceUri))">
+    
+</iframe>

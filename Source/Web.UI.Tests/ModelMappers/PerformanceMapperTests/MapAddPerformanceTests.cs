@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using Ewk.BandWebsite.Web.UI.Models.Performance;
+using Ewk.BandWebsite.Web.Common.Models.Performance;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PerformanceMapperTests

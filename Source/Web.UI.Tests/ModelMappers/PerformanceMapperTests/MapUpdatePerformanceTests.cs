@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using Ewk.BandWebsite.UnitTests.ModelCreators;
-using Ewk.BandWebsite.Web.UI.Models.Performance;
+using Ewk.BandWebsite.Web.Common.Models.Performance;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 

@@ -5,9 +5,9 @@ using System.Web.Mvc;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Resources;
-using Ewk.BandWebsite.Web.UI.ModelMappers;
-using Ewk.BandWebsite.Web.UI.Models;
-using Ewk.BandWebsite.Web.UI.Models.VideoAdapterSettings;
+using Ewk.BandWebsite.Web.Common.ModelMappers;
+using Ewk.BandWebsite.Web.Common.Models;
+using Ewk.BandWebsite.Web.Common.Models.VideoAdapterSettings;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {

@@ -7,7 +7,8 @@ using Ewk.BandWebsite.Catalogs.MongoDb;
 using Ewk.BandWebsite.Common;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Repositories;
-using Ewk.BandWebsite.Web.UI.ModelMappers;
+using Ewk.BandWebsite.Web.Common;
+using Ewk.BandWebsite.Web.Common.ModelMappers;
 using Ewk.Configuration;
 using Microsoft.Practices.Unity;
 

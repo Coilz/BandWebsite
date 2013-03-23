@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15EC60BA-37D7-41A9-8C95-2D3D27EC3389}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ewk.BandWebsite.Web.Common</RootNamespace>
+    <AssemblyName>Ewk.BandWebsite.Web.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModelMappers\AudioAdapterSettingsMapper.cs" />
+    <Compile Include="ModelMappers\BandMapper.cs" />
+    <Compile Include="ModelMappers\BlogArticleMapper.cs" />
+    <Compile Include="ModelMappers\IAudioAdapterSettingsMapper.cs" />
+    <Compile Include="ModelMappers\IBandMapper.cs" />
+    <Compile Include="ModelMappers\IBlogArticleMapper.cs" />
+    <Compile Include="ModelMappers\IPerformanceMapper.cs" />
+    <Compile Include="ModelMappers\IPhotoAdapterSettingsMapper.cs" />
+    <Compile Include="ModelMappers\IUserMapper.cs" />
+    <Compile Include="ModelMappers\IVideoAdapterSettingsMapper.cs" />
+    <Compile Include="ModelMappers\PerformanceMapper.cs" />
+    <Compile Include="ModelMappers\PhotoAdapterSettingsMapper.cs" />
+    <Compile Include="ModelMappers\UserMapper.cs" />
+    <Compile Include="ModelMappers\VideoAdapterSettingsMapper.cs" />
+    <Compile Include="Models\Account\AccountModels.cs" />
+    <Compile Include="Models\AudioAdapterSettings\AudioAdapterSettingsBaseModel.cs" />
+    <Compile Include="Models\AudioAdapterSettings\AudioAdapterSettingsDetailsModel.cs" />
+    <Compile Include="Models\AudioAdapterSettings\AudioDetailsModel.cs" />
+    <Compile Include="Models\AudioAdapterSettings\UpdateAudioAdapterSettingsModel.cs" />
+    <Compile Include="Models\Blog\AddBlogArticleModel.cs" />
+    <Compile Include="Models\Blog\BlogArticleDetailsModel.cs" />
+    <Compile Include="Models\Blog\PublishBlogArticleModel.cs" />
+    <Compile Include="Models\Blog\UpdateBlogArticleModel.cs" />
+    <Compile Include="Models\Home\AboutBaseModel.cs" />
+    <Compile Include="Models\Home\AboutModel.cs" />
+    <Compile Include="Models\Home\AboutUpdateModel.cs" />
+    <Compile Include="Models\ItemListModel.cs" />
+    <Compile Include="Models\Performance\AddPerformanceModel.cs" />
+    <Compile Include="Models\Performance\PerformanceBaseModel.cs" />
+    <Compile Include="Models\Performance\PerformanceDetailsModel.cs" />
+    <Compile Include="Models\Performance\UpdatePerformanceModel.cs" />
+    <Compile Include="Models\PhotoAdapterSettings\PhotoAdapterSettingsBaseModel.cs" />
+    <Compile Include="Models\PhotoAdapterSettings\PhotoAdapterSettingsDetailsModel.cs" />
+    <Compile Include="Models\PhotoAdapterSettings\PhotoDetailsModel.cs" />
+    <Compile Include="Models\PhotoAdapterSettings\UpdatePhotoAdapterSettingsModel.cs" />
+    <Compile Include="Models\VideoAdapterSettings\UpdateVideoAdapterSettingsModel.cs" />
+    <Compile Include="Models\VideoAdapterSettings\VideoAdapterSettingsBaseModel.cs" />
+    <Compile Include="Models\VideoAdapterSettings\VideoAdapterSettingsDetailsModel.cs" />
+    <Compile Include="Models\VideoAdapterSettings\VideoDetailsModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadContextAccessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Catalogs\Catalogs.csproj">
+      <Project>{E96D0F82-3CD5-4F26-B99F-D83E1003DA14}</Project>
+      <Name>Catalogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4265D5D7-0D98-44DB-84E3-86D9C6BB9DFD}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{E729B7F6-DB5D-44B4-9B71-B1DABDD9F147}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Process\Process.csproj">
+      <Project>{DB909BB3-AC2E-481D-9900-36528A54DFB8}</Project>
+      <Name>Process</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

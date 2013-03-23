@@ -1,4 +1,4 @@
-﻿@model Ewk.BandWebsite.Web.UI.Models.AudioAdapterSettings.AudioDetailsModel
+﻿@model Ewk.BandWebsite.Web.Common.Models.AudioAdapterSettings.AudioDetailsModel
 
 @{
     ViewBag.Title = "Song";
@@ -9,7 +9,7 @@
         @Model.Title
     </div>
     <div class="content">
-        <iframe width="100%" height="166" scrolling="no" frameborder="0" src="@Model.ResourceUri"></iframe>
+        @Html.Partial("~/Views/Audio/_AudioWidgetPartial.cshtml")
     </div>
     <p>
         @Html.ActionLink("<< Back to List", "Index")

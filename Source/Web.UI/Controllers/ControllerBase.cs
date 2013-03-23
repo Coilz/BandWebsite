@@ -8,7 +8,7 @@ using Ewk.Configuration;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {
-    public abstract class ControllerBase : AsyncController
+    public abstract class ControllerBase : Controller
     {
         protected override IAsyncResult BeginExecute(RequestContext requestContext, AsyncCallback callback, object state)
         {

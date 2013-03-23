@@ -6,8 +6,8 @@ using System.Web.Security;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Resources;
-using Ewk.BandWebsite.Web.UI.ModelMappers;
-using Ewk.BandWebsite.Web.UI.Models.Blog;
+using Ewk.BandWebsite.Web.Common.ModelMappers;
+using Ewk.BandWebsite.Web.Common.Models.Blog;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {

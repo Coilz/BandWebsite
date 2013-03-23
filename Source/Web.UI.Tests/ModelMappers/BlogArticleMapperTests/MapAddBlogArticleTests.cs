@@ -1,5 +1,5 @@
 ﻿using Ewk.BandWebsite.UnitTests.ModelCreators;
-using Ewk.BandWebsite.Web.UI.Models.Blog;
+using Ewk.BandWebsite.Web.Common.Models.Blog;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.BlogArticleMapperTests

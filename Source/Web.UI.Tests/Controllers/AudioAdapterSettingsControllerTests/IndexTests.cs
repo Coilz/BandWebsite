@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using Ewk.BandWebsite.Domain.BandModel;
 using Ewk.BandWebsite.UnitTests.ModelCreators;
-using Ewk.BandWebsite.Web.UI.Models.AudioAdapterSettings;
+using Ewk.BandWebsite.Web.Common.Models.AudioAdapterSettings;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 

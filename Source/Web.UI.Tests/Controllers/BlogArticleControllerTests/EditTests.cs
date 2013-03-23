@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Ewk.BandWebsite.Domain.BandModel;
 using Ewk.BandWebsite.UnitTests.ModelCreators;
-using Ewk.BandWebsite.Web.UI.Models.Blog;
+using Ewk.BandWebsite.Web.Common.Models.Blog;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 

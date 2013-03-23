@@ -1,0 +1,67 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Http;
+using Ewk.BandWebsite.Catalogs;
+using Ewk.BandWebsite.Common;
+using Ewk.BandWebsite.Process;
+using Ewk.BandWebsite.Web.Common.ModelMappers;
+using Ewk.BandWebsite.Web.Common.Models.AudioAdapterSettings;
+using Ewk.Configuration;
+
+namespace Ewk.BandWebsite.Web.API.Controllers
+{
+    public class AudioController : ApiController
+    {
+        public async Task<IQueryable<AudioDetailsModel>> GetAsync(Guid bandId)
+        {
+            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
+            bandIdInstaller.SetBandId(bandId);
+
+            return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                container =>
+                {
+                    var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioProcess>(container);
+                    var entities = process.GetAudioTracks()
+                                          .ToList();
+
+                    var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioAdapterSettingsMapper>(container);
+                    return mapper.Map(entities).Items.AsQueryable();
+                });
+        }
+
+        public async Task<AudioDetailsModel> GetAsync(Guid bandId, int id)
+        {
+            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
+            bandIdInstaller.SetBandId(bandId);
+
+            return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                container =>
+                {
+                    var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioProcess>(container);
+                    var entity = process.GetAudioTrack(id);
+
+                    var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioAdapterSettingsMapper>(container);
+                    return mapper.Map(entity);
+                });
+        }
+
+        public async Task<IEnumerable<AudioDetailsModel>> GetAsync(Guid bandId, int page, int pageSize)
+        {
+            var bandIdInstaller = DependencyConfiguration.DependencyResolver.Resolve<IBandIdInstaller>();
+            bandIdInstaller.SetBandId(bandId);
+
+            return await CatalogsConsumerHelper.ExecuteWithCatalogScopeAsync(
+                container =>
+                {
+                    var process = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioProcess>(container);
+                    var entities = process.GetAudioTracks(page, pageSize)
+                                          .ToList();
+
+                    var mapper = CatalogsConsumerHelper.ResolveCatalogsConsumer<IAudioAdapterSettingsMapper>(container);
+                    return mapper.Map(entities).Items;
+                });
+        }
+    }
+}

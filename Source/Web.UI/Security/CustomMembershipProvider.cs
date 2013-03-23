@@ -5,7 +5,7 @@ using Ewk.BandWebsite.Common;
 using Ewk.BandWebsite.Domain.AppModel;
 using Ewk.BandWebsite.Domain.BandModel;
 using Ewk.BandWebsite.Process;
-using Ewk.BandWebsite.Web.UI.ModelMappers;
+using Ewk.BandWebsite.Web.Common.ModelMappers;
 using Ewk.Configuration;
 
 namespace Ewk.BandWebsite.Web.UI.Security

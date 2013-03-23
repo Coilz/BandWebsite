@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Security;
 using Ewk.BandWebsite.Resources;
-using Ewk.BandWebsite.Web.UI.Models.Account;
+using Ewk.BandWebsite.Web.Common.Models.Account;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {

@@ -162,6 +162,10 @@
       <Project>{4A60AE3E-C493-42FB-8F00-6D4F1EEBAB6F}</Project>
       <Name>UnitTests %28UnitTests\UnitTests%29</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Web.Common\Web.Common.csproj">
+      <Project>{15EC60BA-37D7-41A9-8C95-2D3D27EC3389}</Project>
+      <Name>Web.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Web.UI\Web.UI.csproj">
       <Project>{1EB16D67-1CD6-48B4-B3D8-F20BE707DA7C}</Project>
       <Name>Web.UI</Name>

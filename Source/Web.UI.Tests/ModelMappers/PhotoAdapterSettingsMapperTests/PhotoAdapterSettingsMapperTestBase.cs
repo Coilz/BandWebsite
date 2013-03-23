@@ -1,4 +1,4 @@
-﻿using Ewk.BandWebsite.Web.UI.ModelMappers;
+﻿using Ewk.BandWebsite.Web.Common.ModelMappers;
 
 namespace Ewk.BandWebsite.Web.UI.Tests.ModelMappers.PhotoAdapterSettingsMapperTests
 {

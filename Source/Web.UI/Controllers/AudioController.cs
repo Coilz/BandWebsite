@@ -6,17 +6,14 @@ using System.Web.Mvc;
 using Ewk.BandWebsite.Catalogs;
 using Ewk.BandWebsite.Process;
 using Ewk.BandWebsite.Resources;
-using Ewk.BandWebsite.Web.UI.ModelMappers;
-using Ewk.BandWebsite.Web.UI.Models;
-using Ewk.BandWebsite.Web.UI.Models.AudioAdapterSettings;
+using Ewk.BandWebsite.Web.Common.ModelMappers;
+using Ewk.BandWebsite.Web.Common.Models;
+using Ewk.BandWebsite.Web.Common.Models.AudioAdapterSettings;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {
     public class AudioController : ControllerBase
     {
-        //
-        // GET: /News/
-
         public async Task<ActionResult> Index()
         {
             try
@@ -40,9 +37,6 @@ namespace Ewk.BandWebsite.Web.UI.Controllers
                 return View(new ItemListModel<AudioDetailsModel> { Title = "Music", Items = new List<AudioDetailsModel>() });
             }
         }
-
-        //
-        // GET: /News/Details/5
 
         public async Task<ActionResult> Details(int id)
         {
