@@ -74,6 +74,10 @@ namespace Ewk.BandWebsite.Web.API.Controllers
                     });
         }
 
+        /// <remarks>
+        /// Check http://stackoverflow.com/questions/11986974/how-to-do-role-based-authorization-for-asp-net-mvc-4-web-api for info on authorization using tokens.
+        /// Als check: http://www.asp.net/web-api/overview/working-with-http/http-message-handlers
+        /// </remarks>
         [Authorize, BandIdFilter]
         public void Post(Guid bandId, [FromBody]AddBlogArticleModel model)
         {
