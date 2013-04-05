@@ -7,8 +7,19 @@
     </div>
 </header>
 <div id="body">
-    <div id="blog">
-        <h2>Blog</h2>
-        <div data-bind="template: { name: 'Article', templateUrl: 'templates/blog', foreach: items }"></div>
+    <div id="blog" class="summary">
+    
+        <div class="title">
+            <a href="/">Blog</a>
+        </div>
+
+        <div class="items">
+            <div data-bind="template: { name: 'Article', templateUrl: 'templates/blog', foreach: items }"></div>
+        </div>
+
+        <div class="footer">
+            <a href="/">View more items</a>
+        </div>
+
     </div>
 </div>

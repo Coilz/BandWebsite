@@ -1,0 +1,80 @@
+﻿#home {
+    display:inline-block;
+}
+#home .leftColumn {
+    float: right;
+    width: 42%;
+}
+#home .centerColumn {
+    float: right;
+    width: 24%;
+}
+#home .rightColumn {
+    float: right;
+    width: 34%;
+}
+@media only screen and (max-width: 900px) {
+    #home .leftColumn {
+        width: 100%;
+    }
+    #home .centerColumn {
+        width: 45%;
+    }
+    #home .rightColumn {
+        width: 55%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #home .leftColumn {
+        width: 100%;
+    }
+    #home .centerColumn {
+        width: 100%;
+    }
+    #home .rightColumn {
+        width: 100%;
+    }
+}
+.summary .items {
+    text-align: center;
+}
+
+.summary .item .title {
+    font-size: 1.5em;
+}
+.summary .item .content {
+    max-height: 16em;
+    overflow: hidden;
+}
+@media only screen and (max-height: 700px) {
+    .summary .item .content {
+        max-height: 12em;
+    }
+}
+@media only screen and (max-height: 500px) {
+    .summary .item .content {
+        max-height: 8em;
+    }
+}
+
+/* PICTURES   
+----------------------------------------------------------*/
+.detail .picture img 
+{
+    height: 24em;
+    cursor: pointer;
+    float: right;
+    padding-left: 2em;
+}
+@media only screen and (max-height: 700px), screen and (max-width: 900px) {
+    .detail .picture img {
+        height: 15em;
+        padding-left: 1.5em;
+    }
+}
+@media only screen and (max-height: 500px), screen and (max-width: 500px) {
+    .detail .picture img {
+        height: 10em;
+        padding-left: 1em;
+    }
+}

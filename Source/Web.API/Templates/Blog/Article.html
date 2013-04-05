@@ -1,4 +1,16 @@
-﻿<div>
-    <div><strong><span data-bind="text: Title"></span></strong></div>
-    <div><span data-bind="text: Content"></span></div>
+﻿<div class="item">
+    <div class="title">
+        <a href="/"><span data-bind="text: Title"></span></a>
+    </div>
+    <div class="content" data-bind="text: Content"></div>
+    <div class="footer">
+        <span class="detialLink">
+            <a href="/">more >></a>
+        </span>
+        <span>
+            <span data-bind="text: AuthorName"></span>
+            <span>, </span>
+            <span class="noWrap" data-bind="text: ModificationDate"></span>
+        </span>
+    </div>
 </div>

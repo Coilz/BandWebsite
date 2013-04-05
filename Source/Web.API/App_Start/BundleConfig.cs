@@ -21,7 +21,10 @@ namespace Ewk.BandWebsite.Web.API.App_Start
                 "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/site.css"));
+                "~/Content/site.css",
+                "~/Content/home.css",
+                "~/Content/blog.css",
+                "~/Content/entityview.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                 "~/Content/themes/base/jquery.ui.core.css",
