@@ -17,7 +17,7 @@
     {
     };
 
-    var render = function(callback)
+    var render = function(callback, errorCount)
     {
         $.getJSON('/api/Blog/' + _bandId + '/' + _page + '/' + _pageSize)
             .done(function (data) {
@@ -31,8 +31,16 @@
                 }
             })
             .fail(function (jqxhr, textStatus, error) {
+                if (errorCount === undefined) {
+                    errorCount = 1;
+                }
+                
                 var err = textStatus + ', ' + error;
                 console.log("Request failed: " + err);
+                
+                if (errorCount < 5) {
+                    render(callback, errorCount);
+                }
             })
             .always(function() {
             });
