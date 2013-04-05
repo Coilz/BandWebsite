@@ -253,7 +253,7 @@
     <Content Include="Scripts\TrafficCop.js" />
     <Content Include="Scripts\TrafficCop.min.gz.js" />
     <Content Include="Scripts\TrafficCop.min.js" />
-    <Content Include="Templates\Blog\Article.tmpl.html" />
+    <Content Include="Templates\Blog\Article.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

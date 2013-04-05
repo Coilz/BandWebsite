@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace Ewk.BandWebsite.Web.API.App_Start
 {
@@ -9,13 +8,22 @@ namespace Ewk.BandWebsite.Web.API.App_Start
         {
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{bandId}/{id}/{page}/{pageSize}",
+                routeTemplate: "api/{controller}/{bandId}/{id}",
                 defaults:
                     new
                         {
                             id = RouteParameter.Optional,
+                        }
+                );
+
+            config.Routes.MapHttpRoute(
+                name: "DefaultPagedApi",
+                routeTemplate: "api/{controller}/{bandId}/{page}/{pageSize}",
+                defaults:
+                    new
+                        {
                             page = RouteParameter.Optional,
-                            pageSize = RouteParameter.Optional
+                            pageSize = RouteParameter.Optional,
                         }
                 );
 
