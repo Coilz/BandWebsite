@@ -19,8 +19,9 @@
 
     var render = function(callback)
     {
-        $.getJSON('/api/Blog/' + _bandId + '/' + _page++ + '/' + _pageSize)
+        $.getJSON('/api/Blog/' + _bandId + '/' + _page + '/' + _pageSize)
             .done(function (data) {
+                _page++;
                 $.each(data, function (i, item) {
                     _viewModel.items.push(item);
                 });
