@@ -1,4 +1,4 @@
-﻿bandwebsite.header.picturebar = (function ()
+﻿bandwebsite.header.picturebar = (function ($, undefined)
 {
     var _picturebar = null;
     var _mouseIsDown = false;
@@ -195,4 +195,4 @@
         init: init,
         destroy: destroy
     };
-})();
+})(jQuery);

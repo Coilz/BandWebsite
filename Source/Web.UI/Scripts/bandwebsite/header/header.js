@@ -1,20 +1,20 @@
-﻿bandwebsite.header = (function()
+﻿bandwebsite.header = (function($, undefined)
 {
     var _header = null;
 
-    var init = function(header)
+    var _init = function(header)
     {
         _header = header;
         bandwebsite.header.picturebar.init($('#pictureBar'));
     };
 
-    var destroy = function()
+    var _destroy = function()
     {
     };
 
     // public API
     return {
-        init: init,
-        destroy: destroy
+        init: _init,
+        destroy: _destroy
     };
-})();
+})(jQuery);

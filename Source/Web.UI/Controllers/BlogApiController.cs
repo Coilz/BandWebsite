@@ -12,7 +12,7 @@ using Ewk.BandWebsite.Web.Common.Models.Blog;
 
 namespace Ewk.BandWebsite.Web.UI.Controllers
 {
-    public class BlogApiController : ApiController
+    public class BlogController : ApiController
     {
         [BandIdFilter]
         public async Task<IQueryable<BlogArticleDetailsModel>> GetAsync(Guid bandId)

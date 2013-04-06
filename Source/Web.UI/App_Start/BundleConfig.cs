@@ -14,7 +14,8 @@ namespace Ewk.BandWebsite.Web.UI.App_Start
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/jquery.easing.{version}.js",
                 "~/Scripts/jquery.mousewheel-{version}.pack.js",
-                "~/Scripts/jquery.fancybox*",
+                "~/Scripts/jquery.fancybox.pack.js",
+                "~/Scripts/jquery.fancybox-*",
                 "~/Scripts/knockout-{version}.js",
                 "~/Scripts/koExternalTemplateEngine_all.js"));
 
@@ -48,10 +49,10 @@ namespace Ewk.BandWebsite.Web.UI.App_Start
                 "~/Content/bandwebsite/performance.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/bandwebsite").Include(
+                "~/Scripts/bandwebsite/bandwebsite.js",
                 "~/Scripts/bandwebsite/header/header.js",
                 "~/Scripts/bandwebsite/header/picturebar.js",
-                "~/Scripts/bandwebsite/bandwebsite.js",
-                "~/Scripts/bandwebsite/main.js",
+                "~/Scripts/bandwebsite/home.js",
                 "~/Scripts/bandwebsite/blog.js"));
         }
     }

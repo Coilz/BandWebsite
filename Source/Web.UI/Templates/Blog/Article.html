@@ -1,11 +1,11 @@
 ﻿<div class="item">
     <div class="title">
-        <a href="/"><span data-bind="text: Title"></span></a>
+        <a data-bind="attr: {'href':  '/BlogArticle/Details/' + $data.Id}"><span data-bind="text: Title"></span></a>
     </div>
     <div class="content" data-bind="text: Content"></div>
     <div class="footer">
         <span class="detialLink">
-            <a href="/">more >></a>
+            <a href="/BlogArticle/Details/956beceb-0c19-4ba4-a356-2bf83892b537">more >></a>
         </span>
         <span>
             <span data-bind="text: AuthorName"></span>
