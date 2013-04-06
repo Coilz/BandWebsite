@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using Ewk.BandWebsite.Common;
 using Ewk.Configuration;
 
-namespace Ewk.BandWebsite.Web.API
+namespace Ewk.BandWebsite.Web.Common
 {
     public class BandIdFilterAttribute : System.Web.Http.Filters.ActionFilterAttribute
     {

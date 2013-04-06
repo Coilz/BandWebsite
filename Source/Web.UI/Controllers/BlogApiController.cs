@@ -10,9 +10,9 @@ using Ewk.BandWebsite.Web.Common;
 using Ewk.BandWebsite.Web.Common.ModelMappers;
 using Ewk.BandWebsite.Web.Common.Models.Blog;
 
-namespace Ewk.BandWebsite.Web.API.Controllers
+namespace Ewk.BandWebsite.Web.UI.Controllers
 {
-    public class BlogController : ApiController
+    public class BlogApiController : ApiController
     {
         [BandIdFilter]
         public async Task<IQueryable<BlogArticleDetailsModel>> GetAsync(Guid bandId)

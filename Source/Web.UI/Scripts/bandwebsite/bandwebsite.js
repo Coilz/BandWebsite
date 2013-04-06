@@ -1,25 +1,8 @@
-﻿/*
-// Override the onload event
-window.onload = function()
-{
-    // the page finished loading, do something here...
-};
-*/
-
-// jQuery's version of window.onload function
-$(document).ready(function ()
+﻿$(document).ready(function ()
 {
     bandwebsite.init();
 });
-
-/*
-$(document).live('pageinit', function (event)
-{
-bandwebsite.init();
-});
-*/
-
-var bandwebsite = (function ()
+var bandwebsite = (function ($, undefined)
 {
     var init = function ()
     {
@@ -45,4 +28,4 @@ var bandwebsite = (function ()
         init: init,
         destroy: destroy
     };
-})();
+})(jQuery);
