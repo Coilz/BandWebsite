@@ -139,7 +139,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AudioApiController.cs" />
-    <Compile Include="Controllers\BlogApiController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\VideoAdapterSettingsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogArticleController.cs" />
@@ -266,7 +266,7 @@
     <Content Include="Scripts\bandwebsite\blog.js" />
     <Content Include="Scripts\bandwebsite\header\header.js" />
     <Content Include="Scripts\bandwebsite\header\picturebar.js" />
-    <Content Include="Scripts\bandwebsite\main.js" />
+    <Content Include="Scripts\bandwebsite\home.js" />
     <Content Include="Scripts\infuser-amd.js" />
     <Content Include="Scripts\infuser-amd.min.gz.js" />
     <Content Include="Scripts\infuser-amd.min.js" />
