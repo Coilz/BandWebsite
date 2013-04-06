@@ -16,7 +16,7 @@ var bandwebsite = (function ($, undefined)
         }
         
         bandwebsite.header.init($('.page header'));
-        bandwebsite.home.init('801d6185-36e2-4d6b-9363-7ec0c33dc14d');
+        bandwebsite.home.init('debfc3d6-b556-4598-929f-b963a543f1e6');//('801d6185-36e2-4d6b-9363-7ec0c33dc14d'); // TODO: find some solution for this
 
         $('.datepicker').datepicker({
             dateFormat: 'dd MM yy',
