@@ -104,12 +104,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Web.API\Web.API.csproj">
-      <Project>{A3022596-14B2-4616-BFE6-844CCD62B123}</Project>
-      <Name>Web.API</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
