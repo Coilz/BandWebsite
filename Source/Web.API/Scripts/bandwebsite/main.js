@@ -8,10 +8,18 @@
 
 var bandwebsite = (function($, undefined)
 {
+    var _isRendering = false;
+    
     var _init = function(bandId)
     {
-        $(window).scroll(function () {
-            if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+        $(window).scroll(function() {
+            if ($(window).scrollTop() >= $(document).height() - $(window).height() - 100) {
+                _render();
+            }
+        });
+        
+        $(window).resize(function () {
+            if ($(document).height() == $(window).height()) {
                 _render();
             }
         });
@@ -22,6 +30,7 @@ var bandwebsite = (function($, undefined)
 
     var _renderMore = function(moreDataAvailable)
     {
+        _isRendering = false;
         // Load more if there is more data and the window is not yet filled with data
         if (moreDataAvailable && $(document).height() <= $(window).height()) {
             _render();
@@ -30,7 +39,10 @@ var bandwebsite = (function($, undefined)
 
     var _render = function()
     {
-        bandwebsite.blog.render(_renderMore);
+        if (!_isRendering) {
+            _isRendering = true;
+            bandwebsite.blog.render(_renderMore);
+        }
     };
 
     var _destroy = function()
